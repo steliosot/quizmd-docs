@@ -2,9 +2,13 @@
 title: Quickstart
 ---
 
+import { Callout } from 'nextra/components'
+
 # Quickstart
 
 ## 1) Install
+
+Install QuizMD from PyPI, then check the command is available.
 
 ```bash
 pip install quizmd
@@ -12,6 +16,8 @@ quizmd --version
 ```
 
 ## 2) Init
+
+Create ready-to-edit starter templates in the current folder, so you can begin with working examples instead of a blank file.
 
 ```bash
 quizmd init
@@ -48,8 +54,10 @@ Validation passed: Hello Quiz (3 questions)
 
 Then QuizMD opens an interactive terminal quiz with arrow-key selection, feedback, explanations, and a final score.
 
-> [!WARNING]
-> Common mistakes
-> - Forgot `--validate` before running a new file.
-> - Forgot API key before `hello-essay.md`.
-> - Wrong markdown structure (`Answer`, `Type`, sections) in custom files.
+<Callout type="warning">
+  **Common mistakes**
+
+  - Forgot `--validate` before running a new file.
+  - Forgot an API key before running `hello-essay.md`.
+  - Used the wrong markdown structure (`Answer`, `Type`, sections) in custom files.
+</Callout>
