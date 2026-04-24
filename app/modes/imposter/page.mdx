@@ -18,22 +18,22 @@ Imposter Mode extends MCQ with an extra task: identify misleading wrong options.
 
 ```md
 ## Question 1
-What does `arr * 3` do for a list?
+Which command creates a Python virtual environment?
 
-- Repeats the list three times
-- Converts all elements to strings
-- Extends the list with three empty elements
-- Multiplies each element by 3
+- python -m venv .venv
+- pip install venv
+- source .venv/bin/activate
+- python requirements.txt
 
 Answer: 1
-Imposters: 4
+Imposters: 2
 Type: single
 Time: 30
-Explanation: `*` repeats the list, it does not multiply each element.
+Explanation: `pip install venv` looks believable, but `venv` is built into Python and runs with `python -m venv`.
 ```
 
 - Correct answer: `1`
-- Imposter answer(s): `4`
+- Imposter answer(s): `2`
 
 ```bash
 quizmd --validate hello-imposter.md

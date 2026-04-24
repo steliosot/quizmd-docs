@@ -18,19 +18,20 @@ Classic Mode is the standard MCQ flow for single and multiple choice.
 ## Tiny example
 
 ```md
-# Python Basics
+# Python File Handling
 
 ## Question 1
-What is 2 + 2?
+Which pattern closes a file automatically after reading it?
 
-- 3
-- 4
-- 5
+- f = open("data.txt")
+- with open("data.txt") as f:
+- read("data.txt")
+- close("data.txt")
 
 Answer: 2
 Type: single
-Time: 20
-Explanation: 2 + 2 equals 4.
+Time: 30
+Explanation: A `with` block uses a context manager, so the file is closed even if an error happens.
 ```
 
 ```bash

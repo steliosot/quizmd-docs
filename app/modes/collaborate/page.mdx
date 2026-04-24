@@ -11,7 +11,7 @@ Collaborate is the team mode. The group works toward one fully correct outcome p
 ## Start a room
 
 ```bash
-quizmd room --create --mode collaborate --quiz hello-quiz.md
+quizmd room --create --mode collaborate --quiz debugging-quiz.md
 ```
 
 Players join with the shared room name:
@@ -33,3 +33,20 @@ quizmd room --join <room-name>
 - Concept checks after teaching.
 - Group discussion.
 - Teams learning how to justify answers.
+
+## Example quiz moment
+
+```md
+## Question 1
+Which changes make this API client more reliable?
+
+- Add a timeout to requests
+- Retry every failed request forever
+- Handle pagination
+- Log the API key for debugging
+
+Answer: 1,3
+Type: multiple
+Time: 90
+Explanation: Timeouts and pagination improve reliability. Infinite retries and logging secrets create new problems.
+```

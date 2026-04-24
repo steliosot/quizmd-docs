@@ -15,6 +15,26 @@ Essay Mode is structurally different from MCQ mode.
 - Evaluates against rubric and returns score + feedback sections.
 - Supports Gemini, OpenAI, and Anthropic through provider-specific API keys.
 
+## Example prompt
+
+```md
+# Essay Question: Review dependency pinning
+
+## Question
+Explain why a Python team might pin package versions in `requirements.txt`.
+
+## Instructions for Students
+Write a short technical answer for a junior developer joining the project.
+
+## Evaluation Criteria
+- Explains reproducible installs
+- Mentions CI/team consistency
+- Notes the tradeoff with updates and security patches
+
+## Reference Answer
+Pinned dependencies make installs predictable across machines and CI, but they need regular review so security fixes are not missed.
+```
+
 ## Key differences from MCQ
 
 - Starts with `# Essay Question: ...`.

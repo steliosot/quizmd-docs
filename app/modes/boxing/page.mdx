@@ -11,7 +11,7 @@ Boxing is the teacher/student room mode. It works like a live oral check: the te
 ## Start a room
 
 ```bash
-quizmd room --create --mode boxing --role teacher --quiz hello-quiz.md
+quizmd room --create --mode boxing --role teacher --quiz code-review.md
 ```
 
 Students join with the shared room name:
@@ -33,3 +33,21 @@ quizmd room --join <room-name> --role student
 - One-to-one assessment.
 - Viva-style coding checks.
 - Guided feedback sessions.
+
+## Example session prompt
+
+```md
+## Question 1
+Explain why this function is risky:
+
+`def add_item(item, bucket=[]): bucket.append(item); return bucket`
+
+- Mutable default arguments are shared between calls
+- Lists cannot be returned from functions
+- `append` creates a new list every time
+- Function arguments cannot have defaults
+
+Answer: 1
+Type: single
+Explanation: The same default list is reused, so later calls can unexpectedly contain earlier values.
+```

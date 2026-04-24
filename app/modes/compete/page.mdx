@@ -11,7 +11,7 @@ Compete is the online race mode. Everyone answers the same quiz, and the fastest
 ## Start a room
 
 ```bash
-quizmd room --create --mode compete --quiz hello-quiz.md
+quizmd room --create --mode compete --quiz python-basics.md
 ```
 
 Players join with the shared room name:
@@ -33,3 +33,22 @@ quizmd room --join <room-name>
 - Classroom reviews.
 - Workshop warm-ups.
 - Friendly revision races.
+
+## Example quiz moment
+
+```md
+## Question 1
+What does this print?
+
+`[x * 2 for x in range(3)]`
+
+- [0, 2, 4]
+- [2, 4, 6]
+- [0, 1, 2]
+- Error
+
+Answer: 1
+Type: single
+Time: 20
+Explanation: `range(3)` gives 0, 1, 2, then each value is doubled.
+```

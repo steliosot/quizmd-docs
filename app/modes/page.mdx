@@ -4,65 +4,129 @@ title: Modes
 
 # Modes
 
-QuizMD has three core learning experiences plus online room variants. Start with Classic Mode, then use Imposter or Essay Mode when you want deeper learning.
+QuizMD has six learning modes: three file-based quiz modes and three live room modes. Use the same Markdown-first workflow, then choose the mode that fits the session: solo practice, misconception spotting, rubric feedback, racing, teamwork, or live oral assessment.
 
-## A) Classic Quiz Mode
+<div className="doc-card-grid">
+  <a className="doc-card" href="./classic/">
+    <span>
+      <span className="doc-card-title">Classic Mode</span>
+      <span className="doc-card-description">Standard single-choice or multiple-choice quizzes for fast checks, revision, and workshops.</span>
+    </span>
+    <span className="doc-card-description">Best first mode.</span>
+  </a>
+  <a className="doc-card" href="./imposter/">
+    <span>
+      <span className="doc-card-title">Imposter Mode</span>
+      <span className="doc-card-description">MCQ plus misleading answers, so learners explain what is correct and what only looks correct.</span>
+    </span>
+    <span className="doc-card-description">Best for misconceptions.</span>
+  </a>
+  <a className="doc-card" href="./essay/">
+    <span>
+      <span className="doc-card-title">Essay Mode</span>
+      <span className="doc-card-description">Markdown essay prompts with rubric-based AI feedback from Gemini, OpenAI, or Anthropic.</span>
+    </span>
+    <span className="doc-card-description">Best for assignments.</span>
+  </a>
+  <a className="doc-card" href="./compete/">
+    <span>
+      <span className="doc-card-title">Room: Compete</span>
+      <span className="doc-card-description">Live multiplayer race mode where fast correct answers score highest.</span>
+    </span>
+    <span className="doc-card-description">Best for energy.</span>
+  </a>
+  <a className="doc-card" href="./collaborate/">
+    <span>
+      <span className="doc-card-title">Room: Collaborate</span>
+      <span className="doc-card-description">Team mode where everyone works toward one fully correct answer per question.</span>
+    </span>
+    <span className="doc-card-description">Best for discussion.</span>
+  </a>
+  <a className="doc-card" href="./boxing/">
+    <span>
+      <span className="doc-card-title">Room: Boxing</span>
+      <span className="doc-card-description">Teacher/student chat mode for oral checks, follow-ups, scoring, and saved transcripts.</span>
+    </span>
+    <span className="doc-card-description">Best for feedback.</span>
+  </a>
+</div>
 
-- Single-choice and multiple-choice questions.
-- Optional timers per question.
-- Explanation output after submission.
-- No AI key required.
+## Classic Mode
+
+Classic Mode is the clean starting point: ask a question, show options, collect one or more answers, then show feedback.
 
 ```md
 ## Question 1
-What is 2 + 2?
+Which Python data type removes duplicate values?
 
-- 3
-- 4
-- 5
+- list
+- set
+- tuple
+- dict
 
 Answer: 2
 Type: single
-Time: 20
-Explanation: 2 + 2 equals 4.
+Explanation: A set keeps unique values, so duplicates are removed.
 ```
 
-[Open Classic Mode details](/modes/classic)
+## Imposter Mode
 
-## B) Imposter Mode
-
-- Same quiz flow as Classic mode.
-- Users also identify misleading options.
-- Great for misconception spotting and deeper understanding.
+Imposter Mode adds a second thinking step. Learners still choose the correct answer, but they also learn to spot the misleading option that sounds plausible.
 
 ```md
+## Question 1
+Which command creates a Python virtual environment?
+
+- python -m venv .venv
+- pip install venv
+- source .venv/bin/activate
+- python requirements.txt
+
 Answer: 1
-Imposters: 4
+Imposters: 2
 Type: single
+Explanation: `pip install venv` sounds plausible, but `venv` is run as a Python module.
 ```
 
-[Open Imposter Mode details](/modes/imposter)
+## Essay Mode
 
-## C) Essay Mode
+Essay Mode is for written answers and rubric feedback. It uses a different file structure from MCQ quizzes and can evaluate with Gemini, OpenAI, or Anthropic.
 
-- Markdown-defined essay questions and rubric sections.
-- Rubric-based evaluation with optional AI providers.
-- Distinct structure from MCQ files and separate runtime settings.
-- Produces score and feedback sections for review.
+```md
+# Essay Question: Explain dependency pinning
 
-[Open Essay Mode details](/modes/essay)
+## Question
+Explain why a Python project might pin dependencies in `requirements.txt`.
 
-## Room modes (online)
+## Evaluation Criteria
+- Mentions reproducible installs
+- Explains team or CI consistency
+- Notes the tradeoff with updates/security
+```
 
-Room modes let several people use the same quiz content together.
+## Room: Compete
 
-- [Room: Compete](/modes/compete): answer correctly as fast as possible.
-- [Room: Collaborate](/modes/collaborate): work as a team until the answer is fully correct.
-- [Room: Boxing](/modes/boxing): teacher/student chat, follow-ups, scoring, and transcript saving.
+Compete turns a normal quiz into a live race. Use it when you want energy, quick recall, and a visible final score.
 
 ```bash
-quizmd room --create --mode compete --quiz hello-quiz.md
-quizmd room --create --mode collaborate --quiz hello-quiz.md
-quizmd room --create --mode boxing --quiz hello-quiz.md
+quizmd room --create --mode compete --quiz python-basics.md
 quizmd room --join <room-name>
+```
+
+## Room: Collaborate
+
+Collaborate turns the same quiz content into a team challenge. It is useful when the answer needs discussion, like debugging, API design, or code review.
+
+```bash
+quizmd room --create --mode collaborate --quiz debugging-quiz.md
+quizmd room --join <room-name>
+```
+
+## Room: Boxing
+
+Boxing is a teacher/student room for live questions, natural follow-ups, scoring, and a saved transcript.
+
+```bash
+quizmd room --create --mode boxing --role teacher --quiz code-review.md
+quizmd room --join <room-name> --role student
 ```
