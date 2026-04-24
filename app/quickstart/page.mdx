@@ -6,6 +6,10 @@ import { Callout } from 'nextra/components'
 
 # Quickstart
 
+QuizMD is a CLI tool to create and run interactive quizzes from Markdown files. Use it for teaching, workshops, self-study, or coding classes.
+
+This takes about one minute. Each command block has a copy button.
+
 ## 1) Install
 
 Install QuizMD from PyPI, then confirm the `quizmd` command is available.
@@ -15,7 +19,13 @@ pip install quizmd
 quizmd --version
 ```
 
-## 2) Init
+Expected:
+
+```text
+quizmd 2.x.x
+```
+
+## 2) Create your first quiz
 
 Create ready-to-edit starter templates in the current folder, so you start from working quiz files instead of a blank page.
 
@@ -23,9 +33,22 @@ Create ready-to-edit starter templates in the current folder, so you start from 
 quizmd init
 ```
 
+This creates files in your current directory:
+
+```text
+Created starter files:
+- hello-quiz.md
+- hello-imposter.md
+- hello-essay.md
+```
+
 ## 3) Validate
 
 Validate each starter before you run it. This catches missing fields, broken answer indexes, and essay structure issues early.
+
+<Callout type="warning">
+  Always validate before running a new or edited quiz file.
+</Callout>
 
 ```bash
 quizmd --validate hello-quiz.md
@@ -33,35 +56,68 @@ quizmd --validate hello-imposter.md
 quizmd --validate hello-essay.md
 ```
 
-## 4) Run
+Expected:
 
-Run the classic and imposter starters directly. Essay mode needs one AI provider key first.
+```text
+Validation passed: Hello Quiz (3 questions)
+Validation passed: Hello Imposter Quiz (3 questions)
+Validation passed: Essay Question: requirements basics (3 points)
+```
+
+## 4) Run the quiz
+
+Run the classic and imposter starters directly.
 
 ```bash
 quizmd hello-quiz.md
 quizmd hello-imposter.md
 ```
 
-For essay mode, set one API key first:
+You should see an interactive terminal quiz:
 
-```bash
+```text
+Question 1/3
+What is 2 + 2?
+
+> 1. 3
+  2. 4
+  3. 5
+
+Use ↑/↓ to move, Space to select, Enter to submit
+```
+
+## Essay mode
+
+Essay quizzes use AI feedback, so set one provider key before running `hello-essay.md`.
+
+Mac/Linux:
+
+```sh
 export GEMINI_API_KEY="your_key_here"
-# or OPENAI_API_KEY / ANTHROPIC_API_KEY
 quizmd hello-essay.md
 ```
 
-## What you should see
+Windows PowerShell:
 
-```text
-Validation passed: Hello Quiz (3 questions)
+```powershell
+$env:GEMINI_API_KEY="your_key_here"
+quizmd hello-essay.md
 ```
 
-Then QuizMD opens an interactive terminal quiz with arrow-key selection, instant feedback, explanations, and a final score.
+Supported providers: Gemini, OpenAI, and Anthropic. If you do not have an API key yet, skip essay mode and start with `hello-quiz.md`.
 
 <Callout type="warning">
   **Common mistakes**
 
   - Forgot `--validate` before running a new file.
   - Forgot an API key before running `hello-essay.md`.
+  - Ran `quizmd hello-quiz.md` from a different folder than the starter files.
+  - Edited the Markdown file but did not save it before running.
   - Used the wrong Markdown structure (`Answer`, `Type`, sections) in custom files.
 </Callout>
+
+## Next
+
+- [Create your own quiz](/create-a-quiz)
+- [Explore modes](/modes)
+- [Try examples](/examples)
