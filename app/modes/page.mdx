@@ -1,0 +1,51 @@
+---
+title: Modes
+---
+
+# Modes
+
+## Local modes
+
+### Single/Multiple MCQ
+
+```bash
+quizmd hello-quiz.md
+```
+
+### Imposter mode
+
+```bash
+quizmd hello-imposter.md
+```
+
+### Essay mode
+
+```bash
+quizmd hello-essay.md
+```
+
+## Room modes (online)
+
+### Compete
+
+```bash
+quizmd room --create --mode compete --quiz hello-quiz.md
+```
+
+### Collaborate
+
+```bash
+quizmd room --create --mode collaborate --quiz hello-quiz.md
+```
+
+### Boxing
+
+```bash
+quizmd room --create --mode boxing --quiz hello-quiz.md
+```
+
+### Join any room
+
+```bash
+quizmd room --join <room-name>
+```

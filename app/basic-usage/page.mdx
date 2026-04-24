@@ -1,0 +1,39 @@
+---
+title: Basic Usage
+---
+
+# Basic Usage
+
+## Create starter files
+
+```bash
+quizmd init
+```
+
+This generates starter files including MCQ, imposter, and essay examples.
+
+## Validate then run
+
+```bash
+quizmd --validate hello-quiz.md
+quizmd hello-quiz.md
+```
+
+```bash
+quizmd --validate hello-imposter.md
+quizmd hello-imposter.md
+```
+
+## Essay mode keys
+
+Set one provider key before running essay mode:
+
+```bash
+export GEMINI_API_KEY="your_key_here"
+# or OPENAI_API_KEY / ANTHROPIC_API_KEY
+```
+
+```bash
+quizmd --validate hello-essay.md
+quizmd hello-essay.md
+```
