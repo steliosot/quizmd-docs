@@ -1,5 +1,5 @@
 import { Footer, Layout, Navbar } from 'nextra-theme-docs'
-import { Banner, Head } from 'nextra/components'
+import { Head } from 'nextra/components'
 import { getPageMap } from 'nextra/page-map'
 import 'nextra-theme-docs/style.css'
 import './global.css'
@@ -12,7 +12,6 @@ export const metadata = {
   description: 'Official documentation for QuizMD.'
 }
 
-const banner = <Banner storageKey="quizmd-docs-banner">QuizMD docs are live on GitHub Pages.</Banner>
 const navbar = (
   <Navbar
     logo={<b>QuizMD Docs</b>}
@@ -27,7 +26,6 @@ export default async function RootLayout({ children }) {
       <Head />
       <body>
         <Layout
-          banner={banner}
           navbar={navbar}
           pageMap={await getPageMap()}
           docsRepositoryBase="https://github.com/steliosot/quizmd-docs/blob/main"
