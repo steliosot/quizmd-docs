@@ -1,0 +1,35 @@
+html:root {
+  --nextra-content-width: 78rem;
+}
+
+article {
+  font-size: 0.94rem;
+  line-height: 1.62;
+}
+
+article h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.08;
+}
+
+article h2 {
+  font-size: 1.35rem;
+  margin-top: 2rem;
+}
+
+article h3 {
+  font-size: 1.05rem;
+}
+
+article p,
+article li {
+  max-width: 70ch;
+}
+
+article pre {
+  font-size: 0.86rem;
+}
+
+article img {
+  max-width: min(100%, 820px);
+}

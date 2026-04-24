@@ -37,11 +37,21 @@ Type: single
 - Cause: metadata omitted.
 - Fix: add `Answer: ...`.
 
+```md
+Answer: 2
+Type: single
+```
+
 ### Missing type
 
 - Error: question missing `Type`.
 - Cause: metadata omitted.
 - Fix: add `Type: single` or `Type: multiple`.
+
+```md
+Answer: 1,3
+Type: multiple
+```
 
 ### Duplicate answer indexes
 
@@ -49,11 +59,20 @@ Type: single
 - Cause: repeated indexes like `Answer: 1,1`.
 - Fix: keep each answer index unique.
 
+```md
+Answer: 1
+Type: single
+```
+
 ### Unsupported type
 
 - Error: unsupported question type.
 - Cause: invalid type value.
 - Fix: use only `single` or `multiple`.
+
+```md
+Type: single
+```
 
 ### Unexpected content outside question blocks
 
@@ -61,8 +80,28 @@ Type: single
 - Cause: stray text in top-level body.
 - Fix: keep structure as `# title`, then `## question` blocks.
 
+```md
+# My Quiz
+
+## Question 1
+Question text goes here.
+```
+
 ### No valid questions found
 
 - Error: parser found zero valid question blocks.
 - Cause: missing `##` sections or incomplete fields.
 - Fix: add at least one complete question block.
+
+```md
+# My Quiz
+
+## Question 1
+What is 2 + 2?
+
+- 3
+- 4
+
+Answer: 2
+Type: single
+```

@@ -16,12 +16,20 @@ Classic Mode.
 
 ## Best examples to run
 
-- `quizmd quizzes/general-science-quiz.md`
-- `quizmd quizzes/history-and-civics-quiz.md`
+```bash
+quizmd quizzes/general-science-quiz.md
+quizmd quizzes/history-and-civics-quiz.md
+```
 
 ## Suggested workflow
 
-1. Start from `quizmd init` template.
+1. Start from the init template.
 2. Customize file to lesson goals.
 3. Validate before class.
 4. Run and optionally save outputs.
+
+```bash
+quizmd init
+quizmd --validate hello-quiz.md
+quizmd hello-quiz.md
+```

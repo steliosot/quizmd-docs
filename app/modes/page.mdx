@@ -4,7 +4,7 @@ title: Modes
 
 # Modes
 
-QuizMD has three core learning experiences plus online room variants.
+QuizMD has three core learning experiences plus online room variants. Start with Classic Mode, then use Imposter or Essay Mode when you want deeper learning.
 
 ## A) Classic Quiz Mode
 
@@ -12,6 +12,20 @@ QuizMD has three core learning experiences plus online room variants.
 - Optional timers per question.
 - Explanation output after submission.
 - No AI key required.
+
+```md
+## Question 1
+What is 2 + 2?
+
+- 3
+- 4
+- 5
+
+Answer: 2
+Type: single
+Time: 20
+Explanation: 2 + 2 equals 4.
+```
 
 [Open Classic Mode details](/modes/classic)
 
@@ -21,6 +35,12 @@ QuizMD has three core learning experiences plus online room variants.
 - Users also identify misleading options.
 - Great for misconception spotting and deeper understanding.
 
+```md
+Answer: 1
+Imposters: 4
+Type: single
+```
+
 [Open Imposter Mode details](/modes/imposter)
 
 ## C) Essay Mode
@@ -28,6 +48,7 @@ QuizMD has three core learning experiences plus online room variants.
 - Markdown-defined essay questions and rubric sections.
 - Rubric-based evaluation with optional AI providers.
 - Distinct structure from MCQ files and separate runtime settings.
+- Produces score and feedback sections for review.
 
 [Open Essay Mode details](/modes/essay)
 
@@ -43,3 +64,5 @@ quizmd room --create --mode collaborate --quiz hello-quiz.md
 quizmd room --create --mode boxing --quiz hello-quiz.md
 quizmd room --join <room-name>
 ```
+
+Room modes use the same quiz content, but run it with other people connected to a room.
