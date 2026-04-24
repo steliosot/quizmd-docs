@@ -1,0 +1,33 @@
+---
+title: "Room: Collaborate"
+---
+
+# Room: Collaborate
+
+Collaborate is the team mode. The group works toward one fully correct outcome per question instead of competing individually.
+
+## Start a room
+
+```bash
+quizmd room --create --mode collaborate --quiz hello-quiz.md
+```
+
+Players join with the shared room name:
+
+```bash
+quizmd room --join <room-name>
+```
+
+## Rules
+
+- Work as a team to reach one fully correct outcome per question.
+- Everyone submits; if consensus is wrong, the team retries.
+- Team score increases only when all required answers are correct.
+- Finish all questions with the highest team score possible.
+- Press `Ctrl+C` to exit at any time.
+
+## Best for
+
+- Concept checks after teaching.
+- Group discussion.
+- Teams learning how to justify answers.

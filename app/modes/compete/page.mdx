@@ -1,0 +1,33 @@
+---
+title: "Room: Compete"
+---
+
+# Room: Compete
+
+Compete is the online race mode. Everyone answers the same quiz, and the fastest correct players gain the most points.
+
+## Start a room
+
+```bash
+quizmd room --create --mode compete --quiz hello-quiz.md
+```
+
+Players join with the shared room name:
+
+```bash
+quizmd room --join <room-name>
+```
+
+## Rules
+
+- Answer correctly as fast as possible.
+- Host starts with `/start`; players answer with normal quiz controls.
+- Correct fast answers gain more points; wrong answers lose points.
+- Highest final score wins.
+- Press `Ctrl+C` to exit at any time.
+
+## Best for
+
+- Classroom reviews.
+- Workshop warm-ups.
+- Friendly revision races.

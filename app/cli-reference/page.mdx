@@ -28,9 +28,13 @@ quizmd --full-screen file.md
 ```bash
 quizmd --ai-provider auto hello-essay.md
 quizmd --ai-provider gemini hello-essay.md
+quizmd --ai-provider openai hello-essay.md
+quizmd --ai-provider anthropic hello-essay.md
 quizmd --ai-model <model-name> hello-essay.md
 quizmd --ai-timeout 30 hello-essay.md
 ```
+
+Supported essay providers are Gemini, OpenAI, and Anthropic.
 
 ## Room commands
 
@@ -38,7 +42,9 @@ quizmd --ai-timeout 30 hello-essay.md
 quizmd room --create --mode compete --quiz hello-quiz.md
 quizmd room --create --mode collaborate --quiz hello-quiz.md
 quizmd room --create --mode boxing --quiz hello-quiz.md
+quizmd room --create --mode boxing --role teacher --quiz hello-quiz.md
 quizmd room --join <room-name>
+quizmd room --join <room-name> --role student
 ```
 
 ## Environment variables

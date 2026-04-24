@@ -54,9 +54,11 @@ Type: single
 
 ## Room modes (online)
 
-- `compete`: speed-based scoring.
-- `collaborate`: consensus required.
-- `boxing`: teacher/student chat + scoring.
+Room modes let several people use the same quiz content together.
+
+- [Room: Compete](/modes/compete): answer correctly as fast as possible.
+- [Room: Collaborate](/modes/collaborate): work as a team until the answer is fully correct.
+- [Room: Boxing](/modes/boxing): teacher/student chat, follow-ups, scoring, and transcript saving.
 
 ```bash
 quizmd room --create --mode compete --quiz hello-quiz.md
@@ -64,5 +66,3 @@ quizmd room --create --mode collaborate --quiz hello-quiz.md
 quizmd room --create --mode boxing --quiz hello-quiz.md
 quizmd room --join <room-name>
 ```
-
-Room modes use the same quiz content, but run it with other people connected to a room.
