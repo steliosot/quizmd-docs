@@ -2,47 +2,56 @@
 title: Examples
 ---
 
-import { Cards } from 'nextra/components'
+import Link from 'next/link'
 
 # Examples Gallery
 
 Pick an example by mode and goal. Each card links to a short page with commands and snippets.
 
-<Cards num={3}>
-  <Cards.Card title="Harry Potter quiz" href="/examples/beginner#harry-potter-quiz">
-    Friendly trivia for classic quiz flow.
-  </Cards.Card>
-  <Cards.Card title="World geography" href="/examples/beginner#world-geography-quiz">
-    Short fact-checking questions.
-  </Cards.Card>
-  <Cards.Card title="Math foundations" href="/examples/beginner#math-foundations-quiz">
-    Simple fundamentals quiz.
-  </Cards.Card>
-</Cards>
+<div className="doc-card-grid">
+  <Link className="doc-card" href="/examples/beginner#harry-potter-quiz">
+    <span className="doc-card-title">Harry Potter quiz</span>
+    <span className="doc-card-description">Friendly trivia for classic quiz flow.</span>
+  </Link>
+  <Link className="doc-card" href="/examples/beginner#world-geography-quiz">
+    <span className="doc-card-title">World geography</span>
+    <span className="doc-card-description">Short fact-checking questions.</span>
+  </Link>
+  <Link className="doc-card" href="/examples/beginner#math-foundations-quiz">
+    <span className="doc-card-title">Math foundations</span>
+    <span className="doc-card-description">Simple fundamentals quiz.</span>
+  </Link>
+</div>
 
-<Cards num={3}>
-  <Cards.Card title="Science/history" href="/examples/beginner#science-and-historycivics">
-    Classroom-ready topic sets.
-  </Cards.Card>
-  <Cards.Card title="Python basics" href="/examples/python#python-basics-quiz">
-    Beginner Python concepts.
-  </Cards.Card>
-  <Cards.Card title="Python imposter" href="/examples/python#python-imposter-quiz">
-    Misconception spotting for Python lists.
-  </Cards.Card>
-</Cards>
+<div className="doc-card-grid">
+  <Link className="doc-card" href="/examples/beginner#science-and-historycivics">
+    <span className="doc-card-title">Science/history</span>
+    <span className="doc-card-description">Classroom-ready topic sets.</span>
+  </Link>
+  <Link className="doc-card" href="/examples/python#python-basics-quiz">
+    <span className="doc-card-title">Python basics</span>
+    <span className="doc-card-description">Beginner Python concepts.</span>
+  </Link>
+  <Link className="doc-card" href="/examples/python#python-imposter-quiz">
+    <span className="doc-card-title">Python imposter</span>
+    <span className="doc-card-description">Misconception spotting for Python lists.</span>
+  </Link>
+</div>
 
-<Cards num={3}>
-  <Cards.Card title="requirements.txt essay" href="/examples/essay#requirementstxt-essay">
-    Rubric assessment for dependencies.
-  </Cards.Card>
-  <Cards.Card title="venv essay" href="/examples/essay#venv-essay">
-    Environment isolation explanation.
-  </Cards.Card>
-  <Cards.Card title="pinned versions essay" href="/examples/essay#pinned-versions-essay">
-    Reproducibility and version pinning.
-  </Cards.Card>
-</Cards>
+<div className="doc-card-grid">
+  <Link className="doc-card" href="/examples/essay#requirementstxt-essay">
+    <span className="doc-card-title">requirements.txt essay</span>
+    <span className="doc-card-description">Rubric assessment for dependencies.</span>
+  </Link>
+  <Link className="doc-card" href="/examples/essay#venv-essay">
+    <span className="doc-card-title">venv essay</span>
+    <span className="doc-card-description">Environment isolation explanation.</span>
+  </Link>
+  <Link className="doc-card" href="/examples/essay#pinned-versions-essay">
+    <span className="doc-card-title">pinned versions essay</span>
+    <span className="doc-card-description">Reproducibility and version pinning.</span>
+  </Link>
+</div>
 
 ## Browse by category
 

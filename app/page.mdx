@@ -2,7 +2,7 @@
 title: QuizMD Overview
 ---
 
-import { Cards } from 'nextra/components'
+import Link from 'next/link'
 
 # Write quizzes in Markdown. Run them in the terminal.
 
@@ -23,29 +23,35 @@ quizmd hello-quiz.md
 
 ## Choose a mode
 
-<Cards num={3}>
-  <Cards.Card title="Classic Quiz" href="/modes/classic">
-    Single and multiple choice with timers and explanations.
-  </Cards.Card>
-  <Cards.Card title="Imposter Mode" href="/modes/imposter">
-    Answer normally and also flag misleading options.
-  </Cards.Card>
-  <Cards.Card title="Essay Mode" href="/modes/essay">
-    Rubric-based essay evaluation with optional AI providers.
-  </Cards.Card>
-</Cards>
+<div className="doc-card-grid">
+  <Link className="doc-card" href="/modes/classic">
+    <span className="doc-card-title">Classic Quiz</span>
+    <span className="doc-card-description">Single and multiple choice with timers and explanations.</span>
+  </Link>
+  <Link className="doc-card" href="/modes/imposter">
+    <span className="doc-card-title">Imposter Mode</span>
+    <span className="doc-card-description">Answer normally and also flag misleading options.</span>
+  </Link>
+  <Link className="doc-card" href="/modes/essay">
+    <span className="doc-card-title">Essay Mode</span>
+    <span className="doc-card-description">Rubric-based essay evaluation with optional AI providers.</span>
+  </Link>
+</div>
 
-<Cards num={3}>
-  <Cards.Card title="Room: Compete" href="/modes">
-    Online race mode where fastest correct answers win.
-  </Cards.Card>
-  <Cards.Card title="Room: Collaborate" href="/modes">
-    Online consensus mode for team alignment and discussion.
-  </Cards.Card>
-  <Cards.Card title="Room: Boxing" href="/modes">
-    Teacher/student session with chat and scoring commands.
-  </Cards.Card>
-</Cards>
+<div className="doc-card-grid">
+  <Link className="doc-card" href="/modes/compete">
+    <span className="doc-card-title">Room: Compete</span>
+    <span className="doc-card-description">Online race mode where fastest correct answers win.</span>
+  </Link>
+  <Link className="doc-card" href="/modes/collaborate">
+    <span className="doc-card-title">Room: Collaborate</span>
+    <span className="doc-card-description">Online consensus mode for team alignment and discussion.</span>
+  </Link>
+  <Link className="doc-card" href="/modes/boxing">
+    <span className="doc-card-title">Room: Boxing</span>
+    <span className="doc-card-description">Teacher/student session with chat and scoring commands.</span>
+  </Link>
+</div>
 
 ## Try an example
 

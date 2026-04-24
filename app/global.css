@@ -33,3 +33,69 @@ article pre {
 article img {
   max-width: min(100%, 820px);
 }
+
+.doc-card-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 1.15rem 0 1.35rem;
+}
+
+.doc-card {
+  display: flex;
+  min-height: 8.5rem;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+  border: 1px solid color-mix(in srgb, currentColor 14%, transparent);
+  border-radius: 1rem;
+  padding: 1.15rem 1.2rem;
+  background:
+    linear-gradient(145deg, color-mix(in srgb, currentColor 3%, transparent), transparent 65%),
+    color-mix(in srgb, canvas 96%, currentColor 4%);
+  color: inherit;
+  text-decoration: none;
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease;
+}
+
+.doc-card:hover {
+  border-color: color-mix(in srgb, currentColor 28%, transparent);
+  box-shadow: 0 14px 34px color-mix(in srgb, currentColor 10%, transparent);
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+
+.doc-card-title {
+  display: block;
+  color: color-mix(in srgb, currentColor 92%, transparent);
+  font-size: 1.02rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+}
+
+.doc-card-description {
+  display: block;
+  color: color-mix(in srgb, currentColor 68%, transparent);
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+@media (max-width: 900px) {
+  .doc-card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .doc-card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .doc-card {
+    min-height: auto;
+  }
+}
