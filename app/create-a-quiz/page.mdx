@@ -6,17 +6,17 @@ import { Tabs } from 'nextra/components'
 
 # Create Your First Quiz
 
-## Anatomy of a quiz file
+QuizMD quizzes are plain Markdown templates. Start from one template, change the text, validate it, then run it.
 
-A basic MCQ file has:
+```bash
+quizmd init
+```
 
-- Quiz title: `# ...`
-- Question block: `## ...`
-- Options: lines starting with `-`
-- Required metadata: `Answer:`, `Type:`
-- Optional metadata: `Time:`, `Explanation:`, `Imposters:`
+`quizmd init` creates starter templates for Classic, Imposter, and Essay modes. Room modes reuse a normal quiz template and run it online.
 
-## Complete small file
+## First template
+
+Use this as the smallest Classic Mode quiz:
 
 ```md
 # Intro Quiz
@@ -34,34 +34,32 @@ Time: 20
 Explanation: 2 + 2 equals 4.
 ```
 
-## Validate and run
-
 ```bash
 quizmd --validate intro-quiz.md
 quizmd intro-quiz.md
 ```
 
-## Patterns
+## Anatomy
 
-<Tabs items={["Simple single-choice", "Multiple-choice", "With code block", "With explanation"]}>
+- `# Intro Quiz`: quiz title.
+- `## Question 1`: question block.
+- `- 3`: answer option.
+- `Answer: 2`: correct option index.
+- `Type: single`: question type.
+- `Time: 20`: optional timer.
+- `Explanation: ...`: optional feedback after answering.
+
+## Choose a template by mode
+
+<Tabs items={["Classic", "Imposter", "Essay", "Room: Compete", "Room: Collaborate", "Room: Boxing"]}>
   <Tabs.Tab>
 
-```md
-## Question
-What is Python?
-
-- A language
-- A database
-
-Answer: 1
-Type: single
-```
-
-  </Tabs.Tab>
-  <Tabs.Tab>
+Use Classic Mode for normal single-choice or multiple-choice practice. It is the best first template because it needs no AI key and works locally.
 
 ```md
-## Question
+# Classic Quiz
+
+## Question 1
 Which are Python data types?
 
 - list
@@ -71,39 +69,162 @@ Which are Python data types?
 
 Answer: 1,3,4
 Type: multiple
+Time: 25
+Explanation: list, dict, and integer are Python data types.
+```
+
+```bash
+quizmd --validate classic-quiz.md
+quizmd classic-quiz.md
 ```
 
   </Tabs.Tab>
   <Tabs.Tab>
 
-````md
-## Question
-What does this print?
-```python
-name = "Stelios"
-print(name.upper())
-```
+Use Imposter Mode when you want learners to spot misleading wrong options, not just pick the correct answer.
 
-- stelios
-- STELIOS
-
-Answer: 2
-Type: single
-````
-
-  </Tabs.Tab>
-  <Tabs.Tab>
+An imposter is a wrong option that sounds plausible. Example: if the correct answer is “append adds one item”, then “append adds each list element separately” is an imposter because it describes `extend`, not `append`.
 
 ```md
-## Question
-What does arr.append([4,5]) do?
+# Imposter Quiz
 
-- Adds [4,5] as one element
-- Adds 4 and 5 separately
+## Question 1
+What does `arr.append([4,5])` do?
+
+- Adds the list `[4,5]` as one element
+- Adds `4` and `5` as separate elements
+- Replaces the last element with `[4,5]`
+- Extends the list with `[4,5]`
+
+Answer: 1
+Imposters: 2,4
+Type: single
+Time: 30
+Explanation: append adds one element. extend adds the contents separately.
+```
+
+```bash
+quizmd --validate imposter-quiz.md
+quizmd imposter-quiz.md
+```
+
+  </Tabs.Tab>
+  <Tabs.Tab>
+
+Use Essay Mode for short written answers, rubric scoring, and feedback. This template is structurally different from MCQ quizzes and needs an AI provider key.
+
+```md
+# Essay Question: requirements basics
+
+## Question
+What is `requirements.txt` and why is it useful in Python projects?
+
+## Instructions for Students
+Write 5-10 lines.
+
+## Evaluation Criteria (Total: 3 points)
+1. **Dependency listing (1 point)**
+- Mentions project packages are listed in one file
+2. **Reproducibility (1 point)**
+- Mentions same environment across machines
+3. **Collaboration (1 point)**
+- Mentions easier teamwork
+
+## Reference Answer
+`requirements.txt` lists dependencies so everyone can install the same environment.
+
+## AI Evaluation Rules
+Evaluate only by the rubric above.
+
+## Output Format
+Score: XX%
+
+Feedback:
+- What worked
+- What is missing
+- One suggestion
+```
+
+```bash
+export GEMINI_API_KEY="your_key_here"
+quizmd --validate requirements-essay.md
+quizmd requirements-essay.md
+```
+
+  </Tabs.Tab>
+  <Tabs.Tab>
+
+Use Room: Compete when you want a fast group quiz where speed and correctness both matter. The quiz file is a normal Classic template.
+
+```md
+# Speed Round
+
+## Question 1
+What command creates starter QuizMD files?
+
+- quizmd init
+- quizmd start
+- quizmd new
 
 Answer: 1
 Type: single
-Explanation: append adds a single element.
+Time: 20
+Explanation: `quizmd init` creates starter templates.
+```
+
+```bash
+quizmd room --create --mode compete --quiz speed-round.md
+```
+
+  </Tabs.Tab>
+  <Tabs.Tab>
+
+Use Room: Collaborate when you want learners to discuss and retry until the team reaches the correct answer.
+
+```md
+# Team Quiz
+
+## Question 1
+Which files can QuizMD validate?
+
+- Markdown quiz files
+- Image files
+- Essay markdown files
+
+Answer: 1,3
+Type: multiple
+Time: 30
+Explanation: QuizMD validates MCQ markdown and essay markdown.
+```
+
+```bash
+quizmd room --create --mode collaborate --quiz team-quiz.md
+```
+
+  </Tabs.Tab>
+  <Tabs.Tab>
+
+Use Room: Boxing for a teacher/student conversation. The quiz file gives the room context, then chat and follow-up questions carry the session.
+
+```md
+# Boxing Session
+
+## Question 1
+Explain what a Python virtual environment is.
+
+- It isolates project dependencies
+- It deletes old packages
+- It replaces Python
+
+Answer: 1
+Type: single
+Time: 30
+Explanation: A virtual environment keeps project dependencies separate.
+```
+
+```bash
+quizmd room --create --mode boxing --role teacher --quiz boxing-session.md
+quizmd room --join <room-name> --role student
 ```
 
   </Tabs.Tab>
