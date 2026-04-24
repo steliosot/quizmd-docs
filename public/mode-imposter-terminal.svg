@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 620" width="1280" height="620" role="img" aria-label="quizmd imposter terminal screenshot">
+  <rect width="1280" height="620" rx="0" fill="#f8fafc"/>
+  <rect x="50" y="25" width="1180" height="560" rx="22" fill="#0f172a"/>
+  <rect x="72" y="48" width="1136" height="56" rx="10" fill="#1e293b"/>
+  <circle cx="105" cy="76" r="9" fill="#ff5f57"/>
+  <circle cx="130" cy="76" r="9" fill="#febc2e"/>
+  <circle cx="155" cy="76" r="9" fill="#28c840"/>
+  <text x="205" y="84" fill="#cbd5e1" font-size="23" font-weight="700" font-family="SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace">quizmd imposter</text>
+  <text x="90" y="136" fill="#e5e7eb" font-size="26" font-weight="700" font-family="SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace">$ quizmd --validate hello-imposter.md</text>
+  <text x="90" y="183" fill="#e5e7eb" font-size="26" font-weight="700" font-family="SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace">Validation passed: Hello Imposter Quiz (3 questions)</text>
+  <text x="90" y="230" fill="#e5e7eb" font-size="26" font-weight="700" font-family="SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace">$ quizmd hello-imposter.md</text>
+  <text x="90" y="277" fill="#e5e7eb" font-size="26" font-weight="700" font-family="SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace"></text>
+  <text x="90" y="324" fill="#34d399" font-size="26" font-weight="800" font-family="SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace">Question 2/3  ███████░░░</text>
+  <text x="90" y="371" fill="#34d399" font-size="26" font-weight="700" font-family="SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace">What does arr * 3 do for a list?</text>
+  <text x="90" y="418" fill="#34d399" font-size="26" font-weight="700" font-family="SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace">&gt; 1. Repeats the list three times</text>
+  <text x="90" y="465" fill="#fbbf24" font-size="26" font-weight="700" font-family="SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace">  4. Multiplies each element by 3</text>
+  <text x="90" y="512" fill="#fbbf24" font-size="26" font-weight="700" font-family="SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace">Imposter task: flag the misleading wrong option</text>
+  <text x="90" y="559" fill="#93c5fd" font-size="26" font-weight="700" font-family="SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace">Correct answer: 1    Imposter: 4</text>
+</svg>
