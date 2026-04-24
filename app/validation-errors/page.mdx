@@ -1,0 +1,68 @@
+---
+title: Validation & Errors
+---
+
+# Validation & Errors
+
+## Why validation exists
+
+Validation catches quiz structure issues before interactive runtime.
+
+```bash
+quizmd --validate your-quiz.md
+```
+
+## Common errors
+
+### Missing options
+
+- Error: question is missing options.
+- Cause: no `- option` lines.
+- Fix: add at least one option line.
+
+```md
+## Question 1
+What is 2 + 2?
+
+- 3
+- 4
+
+Answer: 2
+Type: single
+```
+
+### Missing answer
+
+- Error: question missing `Answer`.
+- Cause: metadata omitted.
+- Fix: add `Answer: ...`.
+
+### Missing type
+
+- Error: question missing `Type`.
+- Cause: metadata omitted.
+- Fix: add `Type: single` or `Type: multiple`.
+
+### Duplicate answer indexes
+
+- Error: duplicate answer indexes.
+- Cause: repeated indexes like `Answer: 1,1`.
+- Fix: keep each answer index unique.
+
+### Unsupported type
+
+- Error: unsupported question type.
+- Cause: invalid type value.
+- Fix: use only `single` or `multiple`.
+
+### Unexpected content outside question blocks
+
+- Error: unexpected content outside `##` blocks.
+- Cause: stray text in top-level body.
+- Fix: keep structure as `# title`, then `## question` blocks.
+
+### No valid questions found
+
+- Error: parser found zero valid question blocks.
+- Cause: missing `##` sections or incomplete fields.
+- Fix: add at least one complete question block.

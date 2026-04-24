@@ -1,0 +1,54 @@
+---
+title: Quickstart
+---
+
+# Quickstart
+
+## 1) Install
+
+```bash
+pip install quizmd
+quizmd --version
+```
+
+## 2) Init
+
+```bash
+quizmd init
+```
+
+## 3) Validate
+
+```bash
+quizmd --validate hello-quiz.md
+quizmd --validate hello-imposter.md
+quizmd --validate hello-essay.md
+```
+
+## 4) Run
+
+```bash
+quizmd hello-quiz.md
+quizmd hello-imposter.md
+```
+
+For essay mode set one API key first:
+
+```bash
+export GEMINI_API_KEY="your_key_here"
+# or OPENAI_API_KEY / ANTHROPIC_API_KEY
+quizmd hello-essay.md
+```
+
+## What you should see
+
+- A full-screen or compact terminal quiz UI.
+- Per-question feedback and explanations.
+- Mode-specific scoring summary.
+- Optional save prompt for local answer export.
+
+> [!WARNING]
+> Common mistakes
+> - Forgot `--validate` before running a new file.
+> - Forgot API key before `hello-essay.md`.
+> - Wrong markdown structure (`Answer`, `Type`, sections) in custom files.

@@ -1,0 +1,51 @@
+---
+title: CLI Reference
+---
+
+# CLI Reference
+
+## Core commands
+
+```bash
+quizmd file.md
+quizmd --validate file.md
+quizmd init
+quizmd --version
+```
+
+## Theme and rendering
+
+```bash
+quizmd --theme auto file.md
+quizmd --theme light file.md
+quizmd --theme dark file.md
+quizmd --no-color file.md
+quizmd --full-screen file.md
+```
+
+## Essay options
+
+```bash
+quizmd --ai-provider auto hello-essay.md
+quizmd --ai-provider gemini hello-essay.md
+quizmd --ai-model <model-name> hello-essay.md
+quizmd --ai-timeout 30 hello-essay.md
+```
+
+## Room commands
+
+```bash
+quizmd room --create --mode compete --quiz hello-quiz.md
+quizmd room --create --mode collaborate --quiz hello-quiz.md
+quizmd room --create --mode boxing --quiz hello-quiz.md
+quizmd room --join <room-name>
+```
+
+## Environment variables
+
+- `GEMINI_API_KEY`
+- `OPENAI_API_KEY`
+- `ANTHROPIC_API_KEY`
+- `QUIZMD_THEME`
+- `NO_COLOR`
+- `QUIZMD_ROOM_SERVER` / `QUIZMD_ROOM_SERVERS`

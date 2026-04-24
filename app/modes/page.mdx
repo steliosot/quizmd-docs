@@ -4,48 +4,42 @@ title: Modes
 
 # Modes
 
-## Local modes
+QuizMD has three core learning experiences plus online room variants.
 
-### Single/Multiple MCQ
+## A) Classic Quiz Mode
 
-```bash
-quizmd hello-quiz.md
-```
+- Single-choice and multiple-choice questions.
+- Optional timers per question.
+- Explanation output after submission.
+- No AI key required.
 
-### Imposter mode
+[Open Classic Mode details](/modes/classic)
 
-```bash
-quizmd hello-imposter.md
-```
+## B) Imposter Mode
 
-### Essay mode
+- Same quiz flow as Classic mode.
+- Users also identify misleading options.
+- Great for misconception spotting and deeper understanding.
 
-```bash
-quizmd hello-essay.md
-```
+[Open Imposter Mode details](/modes/imposter)
+
+## C) Essay Mode
+
+- Markdown-defined essay questions and rubric sections.
+- Rubric-based evaluation with optional AI providers.
+- Distinct structure from MCQ files and separate runtime settings.
+
+[Open Essay Mode details](/modes/essay)
 
 ## Room modes (online)
 
-### Compete
+- `compete`: speed-based scoring.
+- `collaborate`: consensus required.
+- `boxing`: teacher/student chat + scoring.
 
 ```bash
 quizmd room --create --mode compete --quiz hello-quiz.md
-```
-
-### Collaborate
-
-```bash
 quizmd room --create --mode collaborate --quiz hello-quiz.md
-```
-
-### Boxing
-
-```bash
 quizmd room --create --mode boxing --quiz hello-quiz.md
-```
-
-### Join any room
-
-```bash
 quizmd room --join <room-name>
 ```

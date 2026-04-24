@@ -1,0 +1,50 @@
+---
+title: Essay Mode & AI Providers
+---
+
+# Essay Mode & AI Providers
+
+## What essay mode is
+
+Essay mode evaluates markdown-defined essay responses against rubric criteria and returns structured feedback.
+
+## Required environment variables
+
+Set one provider key:
+
+```bash
+export GEMINI_API_KEY="your_key_here"
+# or
+export OPENAI_API_KEY="your_key_here"
+# or
+export ANTHROPIC_API_KEY="your_key_here"
+```
+
+## Auto provider behavior
+
+`--ai-provider auto` checks providers in this order:
+
+1. Gemini
+2. OpenAI
+3. Anthropic
+
+## Provider examples
+
+```bash
+quizmd --ai-provider gemini hello-essay.md
+quizmd --ai-provider openai hello-essay.md
+quizmd --ai-provider anthropic hello-essay.md
+quizmd --ai-provider auto hello-essay.md
+```
+
+## Timeout option
+
+```bash
+quizmd --ai-timeout 45 hello-essay.md
+```
+
+## Privacy and security notes
+
+- Store API keys in environment variables, not in quiz files.
+- Do not commit `.env` files with real keys.
+- Essay answer content is sent to the selected provider for evaluation when AI grading is enabled.

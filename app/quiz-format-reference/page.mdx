@@ -1,0 +1,70 @@
+---
+title: Quiz Format Reference
+---
+
+# Quiz Format Reference
+
+## MCQ format
+
+```md
+# Quiz Title
+
+## Question Title
+Question body text
+
+- Option 1
+- Option 2
+- Option 3
+
+Answer: 2
+Type: single
+Time: 20
+Explanation: Optional explanation.
+Imposters: 3
+```
+
+### MCQ rules
+
+- `Answer:` required.
+- `Type:` required (`single` or `multiple`).
+- `Time:` optional, must be positive integer.
+- `Explanation:` optional.
+- `Imposters:` optional, cannot overlap with correct answers.
+
+## Essay format
+
+```md
+# Essay Question: your title
+
+## Question
+...
+
+## Instructions for Students
+...
+
+## Evaluation Criteria (Total: N points)
+1. **Criterion name (1 point)**
+- detail
+2. **Criterion name (2 points)**
+- detail
+
+## Reference Answer
+...
+
+## AI Evaluation Rules
+...
+
+## Output Format
+...
+```
+
+### Essay rules
+
+- Top heading must be `# Essay Question: ...`.
+- Required sections:
+  - `Question`
+  - `Instructions for Students`
+  - `Evaluation Criteria (Total: N points)`
+  - `Reference Answer`
+  - `AI Evaluation Rules`
+  - `Output Format`

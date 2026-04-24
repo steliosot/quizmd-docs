@@ -1,25 +1,65 @@
 ---
-title: QuizMD Documentation
+title: QuizMD Overview
 ---
 
-# QuizMD Documentation
+import { Cards } from 'nextra/components'
 
-QuizMD is a terminal-first quiz application for MCQ, imposter, essay, and room-based multiplayer modes.
+# Write quizzes in Markdown. Run them in the terminal.
 
-## What you can do
+## What is QuizMD?
 
-- Run local markdown quizzes in your terminal.
-- Use imposter mode to identify misleading answer options.
-- Grade essay responses with AI providers.
-- Create online room sessions for compete, collaborate, and boxing modes.
+QuizMD is a terminal-first quiz tool for classes, revision, workshops, and local assessments.
 
-## Quick links
+It helps you go from a simple `.md` file to a playable quiz fast, while supporting deeper learning modes when you need them.
 
-- [Install](/install)
-- [Basic Usage](/basic-usage)
-- [Modes](/modes)
-- [Main Repository](https://github.com/steliosot/quizmd)
+## Run in 60 seconds
 
-## Scope of this docs v1
+```bash
+pip install quizmd
+quizmd init
+quizmd --validate hello-quiz.md
+quizmd hello-quiz.md
+```
 
-This first docs release focuses on quick start and operational commands.
+![QuizMD terminal quickstart snapshot](/terminal-quickstart.svg)
+
+## Choose a mode
+
+<Cards num={3}>
+  <Cards.Card title="Classic Quiz" href="/modes/classic">
+    Single and multiple choice with timers and explanations.
+  </Cards.Card>
+  <Cards.Card title="Imposter Mode" href="/modes/imposter">
+    Answer normally and also flag misleading options.
+  </Cards.Card>
+  <Cards.Card title="Essay Mode" href="/modes/essay">
+    Rubric-based essay evaluation with optional AI providers.
+  </Cards.Card>
+</Cards>
+
+<Cards num={3}>
+  <Cards.Card title="Room: Compete" href="/modes">
+    Online race mode where fastest correct answers win.
+  </Cards.Card>
+  <Cards.Card title="Room: Collaborate" href="/modes">
+    Online consensus mode for team alignment and discussion.
+  </Cards.Card>
+  <Cards.Card title="Room: Boxing" href="/modes">
+    Teacher/student session with chat and scoring commands.
+  </Cards.Card>
+</Cards>
+
+## Try an example
+
+- Start with [Quickstart](/quickstart).
+- Explore [Examples](/examples) by mode and difficulty.
+- Use [Validation & Errors](/validation-errors) when you get stuck.
+
+## Why people use it
+
+- Teaching: run lightweight quizzes in classrooms or labs.
+- Revision: reinforce concepts with fast repeated practice.
+- Workshops: ship starter files and keep everyone on one flow.
+- Local assessments: run offline-friendly quizzes in terminals.
+
+When users see these use cases immediately, retention improves because product shape is obvious from the first screen.

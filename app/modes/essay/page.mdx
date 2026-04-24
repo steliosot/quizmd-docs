@@ -1,0 +1,29 @@
+---
+title: Essay Mode
+---
+
+# Essay Mode
+
+Essay Mode is structurally different from MCQ mode.
+
+## What it does
+
+- Uses a markdown-defined essay prompt and rubric.
+- Collects essay text in editor flow.
+- Evaluates against rubric and returns score + feedback sections.
+
+## Key differences from MCQ
+
+- Starts with `# Essay Question: ...`.
+- Requires dedicated sections (`Question`, `Instructions`, `Evaluation Criteria`, etc.).
+- Uses AI provider settings (`--ai-provider`, `--ai-model`, `--ai-timeout`) when enabled.
+
+## Run
+
+```bash
+export GEMINI_API_KEY="your_key_here"
+quizmd --validate hello-essay.md
+quizmd hello-essay.md
+```
+
+See full provider setup on [Essay Mode & AI Providers](/essay-ai-providers).
