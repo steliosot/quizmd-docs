@@ -4,54 +4,176 @@ title: CLI Reference
 
 # CLI Reference
 
-## Core commands
+Short, copyable commands for daily QuizMD use.
+
+## Help
+
+| Command | What it does |
+| --- | --- |
+| `quizmd --help` | Show the main CLI help. |
+| `quizmd init --help` | Show starter-file options. |
+| `quizmd room --help` | Show online room options. |
+| `quizmd --version` | Print the installed QuizMD version. |
 
 ```bash
-quizmd file.md
-quizmd --validate file.md
-quizmd init
+quizmd --help
+quizmd init --help
+quizmd room --help
 quizmd --version
 ```
 
-## Theme and rendering
+## Run and Validate
+
+| Command | What it does |
+| --- | --- |
+| `quizmd file.md` | Run a Markdown quiz in the terminal. |
+| `quizmd --validate file.md` | Check the file structure and exit. |
+| `quizmd --full-screen file.md` | Show one question in a full-screen style view. |
 
 ```bash
-quizmd --theme auto file.md
-quizmd --theme light file.md
-quizmd --theme dark file.md
-quizmd --no-color file.md
-quizmd --full-screen file.md
+quizmd hello-quiz.md
+quizmd --validate hello-quiz.md
+quizmd --full-screen hello-quiz.md
 ```
 
-## Essay options
+## Create Starter Files
+
+| Command | What it does |
+| --- | --- |
+| `quizmd init` | Create starter templates in the current folder. |
+| `quizmd init --dir quizzes` | Create starter templates in another folder. |
+| `quizmd init --force` | Overwrite starter files if they already exist. |
+
+```bash
+quizmd init
+quizmd init --dir quizzes
+quizmd init --force
+```
+
+## Themes and Color
+
+| Command | What it does |
+| --- | --- |
+| `quizmd --theme auto file.md` | Pick light or dark automatically. |
+| `quizmd --theme light file.md` | Force the light terminal theme. |
+| `quizmd --theme dark file.md` | Force the dark terminal theme. |
+| `quizmd --no-color file.md` | Disable colors and styled symbols. |
+
+```bash
+quizmd --theme auto hello-quiz.md
+quizmd --theme light hello-quiz.md
+quizmd --theme dark hello-quiz.md
+quizmd --no-color hello-quiz.md
+```
+
+## Essay AI
+
+| Command | What it does |
+| --- | --- |
+| `quizmd --ai-provider auto essay.md` | Use the first available provider key. |
+| `quizmd --ai-provider gemini essay.md` | Use Gemini for essay feedback. |
+| `quizmd --ai-provider openai essay.md` | Use OpenAI for essay feedback. |
+| `quizmd --ai-provider anthropic essay.md` | Use Anthropic for essay feedback. |
+| `quizmd --ai-model MODEL essay.md` | Override the provider default model. |
+| `quizmd --ai-timeout 30 essay.md` | Set the AI request timeout in seconds. |
 
 ```bash
 quizmd --ai-provider auto hello-essay.md
 quizmd --ai-provider gemini hello-essay.md
 quizmd --ai-provider openai hello-essay.md
 quizmd --ai-provider anthropic hello-essay.md
-quizmd --ai-model <model-name> hello-essay.md
+quizmd --ai-model gemini-1.5-flash hello-essay.md
 quizmd --ai-timeout 30 hello-essay.md
 ```
 
-Supported essay providers are Gemini, OpenAI, and Anthropic.
+`auto` checks providers in this order: Gemini, OpenAI, Anthropic.
 
-## Room commands
+## Room Create
+
+| Command | What it does |
+| --- | --- |
+| `quizmd room --create` | Create a room and choose mode interactively. |
+| `quizmd room --create my-room` | Create a room with a custom room name. |
+| `quizmd room --create --mode compete --quiz quiz.md` | Create a speed-scored room. |
+| `quizmd room --create --mode collaborate --quiz quiz.md` | Create a team consensus room. |
+| `quizmd room --create --mode boxing --quiz quiz.md` | Create a teacher/student boxing room. |
+| `quizmd room --create --name Alex --quiz quiz.md` | Set your display name while creating. |
 
 ```bash
+quizmd room --create
+quizmd room --create my-room
 quizmd room --create --mode compete --quiz hello-quiz.md
 quizmd room --create --mode collaborate --quiz hello-quiz.md
 quizmd room --create --mode boxing --quiz hello-quiz.md
-quizmd room --create --mode boxing --role teacher --quiz hello-quiz.md
-quizmd room --join <room-name>
-quizmd room --join <room-name> --role student
+quizmd room --create --name Alex --quiz hello-quiz.md
 ```
 
-## Environment variables
+Room quizzes need `Time` or `time_limit` of at least 5 seconds per question.
 
-- `GEMINI_API_KEY`
-- `OPENAI_API_KEY`
-- `ANTHROPIC_API_KEY`
-- `QUIZMD_THEME`
-- `NO_COLOR`
-- `QUIZMD_ROOM_SERVER` / `QUIZMD_ROOM_SERVERS`
+## Room Join
+
+| Command | What it does |
+| --- | --- |
+| `quizmd room --join ROOM_NAME` | Join an existing room. |
+| `quizmd room --join ROOM_NAME --name Alex` | Join with a display name. |
+| `quizmd room --join ROOM_NAME --role teacher` | Join a boxing room as teacher. |
+| `quizmd room --join ROOM_NAME --role student` | Join a boxing room as student. |
+
+```bash
+quizmd room --join my-room
+quizmd room --join my-room --name Alex
+quizmd room --join my-room --role teacher
+quizmd room --join my-room --role student
+```
+
+## Room Options
+
+| Option | What it does |
+| --- | --- |
+| `--server URL` | Use a specific room server. |
+| `--quiz file.md` | Host a Markdown or JSON quiz file. |
+| `--mode compete` | Use speed scoring. |
+| `--mode collaborate` | Use team consensus scoring. |
+| `--mode boxing` | Use teacher/student chat and scoring. |
+| `--role teacher` | Set boxing role to teacher. |
+| `--role student` | Set boxing role to student. |
+| `--theme auto\|light\|dark` | Set room UI theme. |
+| `--no-color` | Disable color in room UI. |
+| `--full-screen` | Show room questions in full-screen style. |
+
+```bash
+quizmd room --create --server https://example.com --quiz hello-quiz.md
+quizmd room --create --mode boxing --role teacher --quiz hello-quiz.md
+quizmd room --join my-room --theme dark --full-screen
+```
+
+## In-Room Commands
+
+| Command | What it does |
+| --- | --- |
+| `/start` | Host starts the quiz. |
+| `/players` | Show room players. |
+| `/help` | Show room commands. |
+| `/score <0-100>` | Teacher sets the boxing score. |
+| `/end` | End a boxing session. |
+| `/quit` | Leave the room. |
+| `Ctrl+C` | Exit at any time. |
+
+## Environment Variables
+
+| Variable | What it does |
+| --- | --- |
+| `GEMINI_API_KEY` | Enables Gemini essay grading. |
+| `OPENAI_API_KEY` | Enables OpenAI essay grading. |
+| `ANTHROPIC_API_KEY` | Enables Anthropic essay grading. |
+| `QUIZMD_THEME` | Sets the default theme. |
+| `NO_COLOR` | Disables color output. |
+| `QUIZMD_ROOM_SERVER` | Sets one default room server. |
+| `QUIZMD_ROOM_SERVERS` | Sets multiple room servers. |
+| `EDITOR` | Opens essay answers in your preferred editor. |
+
+```bash
+export GEMINI_API_KEY="your_key_here"
+export QUIZMD_THEME="dark"
+export QUIZMD_ROOM_SERVER="https://example.com"
+```
