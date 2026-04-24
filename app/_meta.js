@@ -3,7 +3,6 @@ export default {
   quickstart: 'Quickstart',
   modes: 'Modes',
   'create-a-quiz': 'Create a Quiz',
-  'quiz-format-reference': 'Quiz Format Reference',
   examples: 'Examples',
   'validation-errors': 'Validation & Errors',
   'essay-ai-providers': 'Essay Mode & AI Providers',
