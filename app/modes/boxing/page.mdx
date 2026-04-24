@@ -11,13 +11,13 @@ Boxing is the teacher/student room mode. It works like a live oral check: the te
 ## Start a room
 
 ```bash
-quizmd room --create --mode boxing --role teacher --quiz code-review.md
+quizmd room --create --mode boxing --role teacher --quiz hello-quiz.md
 ```
 
-Students join with the shared room name:
+Students join with the room name and token printed by the teacher:
 
 ```bash
-quizmd room --join <room-name> --role student
+quizmd room --join <room-name> --token <room-token> --role student
 ```
 
 ## Rules

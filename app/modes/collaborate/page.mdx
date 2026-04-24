@@ -4,25 +4,25 @@ title: "Room: Collaborate"
 
 # Room: Collaborate
 
-Collaborate is the team mode. The group works toward one fully correct outcome per question instead of competing individually.
+Collaborate is the team mode. The group works toward one fully correct answer per question instead of competing individually.
 
 ![Room Collaborate terminal example using hello-quiz.md](/mode-collaborate-terminal.svg)
 
 ## Start a room
 
 ```bash
-quizmd room --create --mode collaborate --quiz debugging-quiz.md
+quizmd room --create --mode collaborate --quiz hello-quiz.md
 ```
 
-Players join with the shared room name:
+Players join with the room name and token printed by the host:
 
 ```bash
-quizmd room --join <room-name>
+quizmd room --join <room-name> --token <room-token>
 ```
 
 ## Rules
 
-- Work as a team to reach one fully correct outcome per question.
+- Work as a team to reach one fully correct answer per question.
 - Everyone submits; if consensus is wrong, the team retries.
 - Team score increases only when all required answers are correct.
 - Finish all questions with the highest team score possible.

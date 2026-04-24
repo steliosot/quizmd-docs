@@ -6,7 +6,7 @@ import { Tabs } from 'nextra/components'
 
 # Create Your First Quiz
 
-QuizMD quizzes are plain Markdown templates. Start from one template, change the text, validate it, then run it.
+QuizMD quizzes are plain Markdown templates. Start from one working file, change the text, validate it, then run it.
 
 ```bash
 quizmd init
@@ -44,7 +44,7 @@ quizmd intro-quiz.md
 - `# Intro Quiz`: quiz title.
 - `## Question 1`: question block.
 - `- 3`: answer option.
-- `Answer: 2`: correct option index.
+- `Answer: 2`: correct option number.
 - `Type: single`: question type.
 - `Time: 20`: optional timer.
 - `Explanation: ...`: optional feedback after answering.
@@ -54,23 +54,23 @@ quizmd intro-quiz.md
 <Tabs items={["Classic", "Imposter", "Essay", "Room: Compete", "Room: Collaborate", "Room: Boxing"]}>
   <Tabs.Tab>
 
-Use Classic Mode for normal single-choice or multiple-choice practice. It is the best first template because it needs no AI key and works locally.
+Use Classic Mode for normal single-choice or multiple-choice practice. It is the best first template because it works locally and needs no AI key.
 
 ```md
 # Classic Quiz
 
 ## Question 1
-Which are Python data types?
+Which are built-in Python types?
 
 - list
 - banana
 - dict
-- integer
+- int
 
 Answer: 1,3,4
 Type: multiple
 Time: 25
-Explanation: list, dict, and integer are Python data types.
+Explanation: `list`, `dict`, and `int` are built-in Python types.
 ```
 
 ```bash
@@ -111,7 +111,7 @@ quizmd imposter-quiz.md
   </Tabs.Tab>
   <Tabs.Tab>
 
-Use Essay Mode for short written answers, rubric scoring, and feedback. This template is structurally different from MCQ quizzes and needs an AI provider key.
+Use Essay Mode for short written answers, rubric scoring, and feedback. Essay templates use dedicated sections and need an AI provider key before grading.
 
 ```md
 # Essay Question: requirements basics
@@ -174,12 +174,14 @@ Explanation: `quizmd init` creates starter templates.
 
 ```bash
 quizmd room --create --mode compete --quiz speed-round.md
+# share the printed room name and token
+quizmd room --join <room-name> --token <room-token>
 ```
 
   </Tabs.Tab>
   <Tabs.Tab>
 
-Use Room: Collaborate when you want learners to discuss and retry until the team reaches the correct answer.
+Use Room: Collaborate when you want learners to discuss, retry, and reach a correct answer together.
 
 ```md
 # Team Quiz
@@ -189,16 +191,18 @@ Which files can QuizMD validate?
 
 - Markdown quiz files
 - Image files
-- Essay markdown files
+- Essay Markdown files
 
 Answer: 1,3
 Type: multiple
 Time: 30
-Explanation: QuizMD validates MCQ markdown and essay markdown.
+Explanation: QuizMD validates MCQ Markdown and essay Markdown.
 ```
 
 ```bash
 quizmd room --create --mode collaborate --quiz team-quiz.md
+# share the printed room name and token
+quizmd room --join <room-name> --token <room-token>
 ```
 
   </Tabs.Tab>
@@ -224,7 +228,8 @@ Explanation: A virtual environment keeps project dependencies separate.
 
 ```bash
 quizmd room --create --mode boxing --role teacher --quiz boxing-session.md
-quizmd room --join <room-name> --role student
+# share the printed room name and token
+quizmd room --join <room-name> --token <room-token> --role student
 ```
 
   </Tabs.Tab>

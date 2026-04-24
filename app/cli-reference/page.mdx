@@ -27,7 +27,7 @@ quizmd --version
 | Command | What it does |
 | --- | --- |
 | `quizmd file.md` | Run a Markdown quiz in the terminal. |
-| `quizmd --validate file.md` | Check the file structure and exit. |
+| `quizmd --validate file.md` | Check the file structure without starting the quiz. |
 | `quizmd --full-screen file.md` | Show one question in a full-screen style view. |
 
 ```bash
@@ -40,7 +40,7 @@ quizmd --full-screen hello-quiz.md
 
 | Command | What it does |
 | --- | --- |
-| `quizmd init` | Create starter templates in the current folder. |
+| `quizmd init` | Create working starter templates in the current folder. |
 | `quizmd init --dir quizzes` | Create starter templates in another folder. |
 | `quizmd init --force` | Overwrite starter files if they already exist. |
 
@@ -114,22 +114,23 @@ Room quizzes need `Time` or `time_limit` of at least 5 seconds per question.
 
 | Command | What it does |
 | --- | --- |
-| `quizmd room --join ROOM_NAME` | Join an existing room. |
-| `quizmd room --join ROOM_NAME --name Alex` | Join with a display name. |
-| `quizmd room --join ROOM_NAME --role teacher` | Join a boxing room as teacher. |
-| `quizmd room --join ROOM_NAME --role student` | Join a boxing room as student. |
+| `quizmd room --join ROOM_NAME --token ROOM_TOKEN` | Join a secure room using the token printed by the host. |
+| `quizmd room --join ROOM_NAME --token ROOM_TOKEN --name Alex` | Join with a display name. |
+| `quizmd room --join ROOM_NAME --token ROOM_TOKEN --role teacher` | Join a boxing room as teacher. |
+| `quizmd room --join ROOM_NAME --token ROOM_TOKEN --role student` | Join a boxing room as student. |
 
 ```bash
-quizmd room --join my-room
-quizmd room --join my-room --name Alex
-quizmd room --join my-room --role teacher
-quizmd room --join my-room --role student
+quizmd room --join my-room --token abc123
+quizmd room --join my-room --token abc123 --name Alex
+quizmd room --join my-room --token abc123 --role teacher
+quizmd room --join my-room --token abc123 --role student
 ```
 
 ## Room Options
 
 | Option | What it does |
 | --- | --- |
+| `--token TOKEN` | Join a secure room with the host-provided token. |
 | `--server URL` | Use a specific room server. |
 | `--quiz file.md` | Host a Markdown or JSON quiz file. |
 | `--mode compete` | Use speed scoring. |
@@ -144,7 +145,7 @@ quizmd room --join my-room --role student
 ```bash
 quizmd room --create --server https://example.com --quiz hello-quiz.md
 quizmd room --create --mode boxing --role teacher --quiz hello-quiz.md
-quizmd room --join my-room --theme dark --full-screen
+quizmd room --join my-room --token abc123 --theme dark --full-screen
 ```
 
 ## In-Room Commands

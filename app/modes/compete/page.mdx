@@ -11,13 +11,13 @@ Compete is the online race mode. Everyone answers the same quiz, and the fastest
 ## Start a room
 
 ```bash
-quizmd room --create --mode compete --quiz python-basics.md
+quizmd room --create --mode compete --quiz hello-quiz.md
 ```
 
-Players join with the shared room name:
+Players join with the room name and token printed by the host:
 
 ```bash
-quizmd room --join <room-name>
+quizmd room --join <room-name> --token <room-token>
 ```
 
 ## Rules

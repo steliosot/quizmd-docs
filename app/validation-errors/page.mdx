@@ -6,7 +6,7 @@ title: Validation & Errors
 
 ## Why validation exists
 
-Validation catches quiz structure issues before interactive runtime.
+Validation catches quiz structure issues before an interactive run, so mistakes are easier to fix.
 
 ```bash
 quizmd --validate your-quiz.md
@@ -18,7 +18,7 @@ quizmd --validate your-quiz.md
 
 - Error: question is missing options.
 - Cause: no `- option` lines.
-- Fix: add at least one option line.
+- Fix: add at least two option lines.
 
 ```md
 ## Question 1
@@ -33,7 +33,7 @@ Type: single
 
 ### Missing answer
 
-- Error: question missing `Answer`.
+- Error: question is missing `Answer`.
 - Cause: metadata omitted.
 - Fix: add `Answer: ...`.
 
@@ -44,7 +44,7 @@ Type: single
 
 ### Missing type
 
-- Error: question missing `Type`.
+- Error: question is missing `Type`.
 - Cause: metadata omitted.
 - Fix: add `Type: single` or `Type: multiple`.
 
@@ -76,9 +76,9 @@ Type: single
 
 ### Unexpected content outside question blocks
 
-- Error: unexpected content outside `##` blocks.
+- Error: unexpected content outside `##` question blocks.
 - Cause: stray text in top-level body.
-- Fix: keep structure as `# title`, then `## question` blocks.
+- Fix: keep the structure as `# title`, then `## question` blocks.
 
 ```md
 # My Quiz

@@ -109,8 +109,8 @@ Explain why a Python project might pin dependencies in `requirements.txt`.
 Compete turns a normal quiz into a live race. Use it when you want energy, quick recall, and a visible final score.
 
 ```bash
-quizmd room --create --mode compete --quiz python-basics.md
-quizmd room --join <room-name>
+quizmd room --create --mode compete --quiz hello-quiz.md
+quizmd room --join <room-name> --token <room-token>
 ```
 
 ## Room: Collaborate
@@ -118,8 +118,8 @@ quizmd room --join <room-name>
 Collaborate turns the same quiz content into a team challenge. It is useful when the answer needs discussion, like debugging, API design, or code review.
 
 ```bash
-quizmd room --create --mode collaborate --quiz debugging-quiz.md
-quizmd room --join <room-name>
+quizmd room --create --mode collaborate --quiz hello-quiz.md
+quizmd room --join <room-name> --token <room-token>
 ```
 
 ## Room: Boxing
@@ -127,6 +127,6 @@ quizmd room --join <room-name>
 Boxing is a teacher/student room for live questions, natural follow-ups, scoring, and a saved transcript.
 
 ```bash
-quizmd room --create --mode boxing --role teacher --quiz code-review.md
-quizmd room --join <room-name> --role student
+quizmd room --create --mode boxing --role teacher --quiz hello-quiz.md
+quizmd room --join <room-name> --token <room-token> --role student
 ```
