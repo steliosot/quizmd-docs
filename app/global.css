@@ -7,13 +7,15 @@ article {
   line-height: 1.62;
 }
 
+article h1.x\:text-4xl,
 article h1 {
-  font-size: clamp(2rem, 4vw, 3rem);
-  line-height: 1.08;
+  font-size: clamp(2rem, 5vw, 3.25rem) !important;
+  line-height: 1.12;
+  letter-spacing: -0.035em;
 }
 
 article h2 {
-  font-size: 1.35rem;
+  font-size: 1.22rem;
   margin-top: 2rem;
 }
 
