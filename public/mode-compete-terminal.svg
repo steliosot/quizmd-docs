@@ -9,8 +9,8 @@
   <text x="90" y="136" fill="#e5e7eb" font-size="26" font-weight="700" font-family="SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace">$ quizmd room --create --mode compete --quiz hello-quiz.md</text>
   <text x="90" y="183" fill="#e5e7eb" font-size="26" font-weight="700" font-family="SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace">Room created by: Stelios</text>
   <text x="90" y="230" fill="#e5e7eb" font-size="26" font-weight="700" font-family="SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace">Room name: bright-otter</text>
-  <text x="90" y="277" fill="#e5e7eb" font-size="26" font-weight="700" font-family="SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace">Quiz: Hello Quiz (3 questions)</text>
-  <text x="90" y="324" fill="#93c5fd" font-size="26" font-weight="700" font-family="SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace">Type /start when you are ready.</text>
+  <text x="90" y="277" fill="#e5e7eb" font-size="26" font-weight="700" font-family="SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace">Room token: qmd-8241</text>
+  <text x="90" y="324" fill="#93c5fd" font-size="26" font-weight="700" font-family="SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace">Join: quizmd room --join bright-otter --token qmd-8241</text>
   <text x="90" y="371" fill="#e5e7eb" font-size="26" font-weight="700" font-family="SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace"></text>
   <text x="90" y="418" fill="#fbbf24" font-size="26" font-weight="700" font-family="SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace">/start</text>
   <text x="90" y="465" fill="#34d399" font-size="26" font-weight="800" font-family="SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace">Question 1/3  What is 2 + 2?</text>

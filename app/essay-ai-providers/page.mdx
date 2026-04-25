@@ -12,7 +12,9 @@ QuizMD supports Gemini, OpenAI, and Anthropic for essay grading.
 
 ## Required environment variables
 
-Set one provider key before running an essay quiz:
+Set one provider key before running an essay quiz. Classic, Imposter, and Room quiz modes do not need an AI key.
+
+Mac/Linux:
 
 ```bash
 export GEMINI_API_KEY="your_key_here"
@@ -20,6 +22,16 @@ export GEMINI_API_KEY="your_key_here"
 export OPENAI_API_KEY="your_key_here"
 # or
 export ANTHROPIC_API_KEY="your_key_here"
+```
+
+Windows PowerShell:
+
+```powershell
+$env:GEMINI_API_KEY="your_key_here"
+# or
+$env:OPENAI_API_KEY="your_key_here"
+# or
+$env:ANTHROPIC_API_KEY="your_key_here"
 ```
 
 ## Auto provider behavior
@@ -39,6 +51,7 @@ quizmd --ai-provider gemini hello-essay.md
 quizmd --ai-provider openai hello-essay.md
 quizmd --ai-provider anthropic hello-essay.md
 quizmd --ai-provider auto hello-essay.md
+quizmd --ai-model gemini-flash-latest hello-essay.md
 ```
 
 ## Timeout option
@@ -51,4 +64,6 @@ quizmd --ai-timeout 45 hello-essay.md
 
 - Store API keys in environment variables, not in quiz files.
 - Do not commit `.env` files with real keys.
+- Rotate any key that was pasted into chat, committed to Git, or shown on a shared screen.
 - Essay answer content is sent to the selected provider for evaluation when AI grading is enabled.
+- If Gemini, OpenAI, or Anthropic quota is exhausted, users may see provider errors or fallback feedback depending on the selected provider behavior.

@@ -8,6 +8,8 @@ Collaborate is the team mode. The group works toward one fully correct answer pe
 
 ![Room Collaborate terminal example using hello-quiz.md](/mode-collaborate-terminal.svg)
 
+Room modes require internet access to reach the room server. They do not need an AI API key.
+
 ## Start a room
 
 ```bash
@@ -26,7 +28,7 @@ quizmd room --join <room-name> --token <room-token>
 - Everyone submits; if consensus is wrong, the team retries.
 - Team score increases only when all required answers are correct.
 - Finish all questions with the highest team score possible.
-- Press `Ctrl+C` to exit at any time.
+- Use `/quit` to leave the room cleanly. `Ctrl+C` exits local quiz mode.
 
 ## Best for
 

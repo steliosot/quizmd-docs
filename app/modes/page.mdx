@@ -6,6 +6,19 @@ title: Modes
 
 QuizMD has six learning modes: three file-based quiz modes and three live room modes. Use the same Markdown-first workflow, then choose the mode that fits the session: solo practice, misconception spotting, rubric feedback, racing, teamwork, or live oral assessment.
 
+## Which mode should I use?
+
+| Mode | Use it for | API key? |
+| --- | --- | --- |
+| Classic | Normal single-choice or multiple-choice quizzes. | No |
+| Imposter | Misconceptions and plausible-but-wrong answers. | No |
+| Essay | Written answers with rubric-based feedback. | Yes |
+| Compete | Live race mode with speed scoring. | No |
+| Collaborate | Group consensus and discussion. | No |
+| Boxing | Teacher/student oral checks with scoring. | No |
+
+Local Classic and Imposter quizzes can run offline. Room modes use an online room server, so they need internet access. Essay Mode is the only mode that needs Gemini, OpenAI, or Anthropic API credentials.
+
 <div className="doc-card-grid">
   <a className="doc-card" href="./classic/">
     <span>
@@ -56,6 +69,8 @@ QuizMD has six learning modes: three file-based quiz modes and three live room m
 Classic Mode is the clean starting point: ask a question, show options, collect one or more answers, then show feedback.
 
 ```md
+# Python Data Types
+
 ## Question 1
 Which Python data type removes duplicate values?
 
@@ -74,6 +89,8 @@ Explanation: A set keeps unique values, so duplicates are removed.
 Imposter Mode adds a second thinking step. Learners still choose the correct answer, but they also learn to spot the misleading option that sounds plausible.
 
 ```md
+# Python Virtual Environments
+
 ## Question 1
 Which command creates a Python virtual environment?
 
@@ -98,15 +115,46 @@ Essay Mode is for written answers and rubric feedback. It uses a different file 
 ## Question
 Explain why a Python project might pin dependencies in `requirements.txt`.
 
-## Evaluation Criteria
-- Mentions reproducible installs
-- Explains team or CI consistency
-- Notes the tradeoff with updates/security
+## Instructions for Students
+Write 5-10 lines. Mention both benefits and tradeoffs.
+
+## Evaluation Criteria (Total: 3 points)
+1. **Reproducibility (1 point)**
+- Explains that pinned versions make installs repeatable
+2. **Team or CI consistency (1 point)**
+- Mentions consistent environments across machines or CI
+3. **Maintenance tradeoff (1 point)**
+- Notes that pins still need updates for bug fixes and security
+
+## Reference Answer
+Pinned dependencies make installs predictable across developer machines and CI, which reduces "works on my machine" problems. The tradeoff is that teams need to review pins regularly so bug fixes and security patches are not missed.
+
+## AI Evaluation Rules
+Evaluate only against the criteria above. Give partial credit when the answer is correct but incomplete.
+
+## Output Format
+Score: XX%
+
+Feedback:
+- What worked
+- What is missing
+- One suggestion
 ```
+
+Run it with an API key:
+
+```bash
+export GEMINI_API_KEY="your_key_here"
+quizmd --ai-provider gemini hello-essay.md
+```
+
+If you only want a short preview in slides or teaching material, label it as a shortened example and link to [Essay Examples](/examples/essay) for a full runnable file.
 
 ## Room: Compete
 
 Compete turns a normal quiz into a live race. Use it when you want energy, quick recall, and a visible final score.
+
+Room modes require internet access to reach the room server. Use `/quit` to leave a room cleanly.
 
 ```bash
 quizmd room --create --mode compete --quiz hello-quiz.md
@@ -117,6 +165,8 @@ quizmd room --join <room-name> --token <room-token>
 
 Collaborate turns the same quiz content into a team challenge. It is useful when the answer needs discussion, like debugging, API design, or code review.
 
+Room modes require internet access to reach the room server. Use `/quit` to leave a room cleanly.
+
 ```bash
 quizmd room --create --mode collaborate --quiz hello-quiz.md
 quizmd room --join <room-name> --token <room-token>
@@ -125,6 +175,8 @@ quizmd room --join <room-name> --token <room-token>
 ## Room: Boxing
 
 Boxing is a teacher/student room for live questions, natural follow-ups, scoring, and a saved transcript.
+
+Room modes require internet access to reach the room server. Use `/end` to finish a boxing session or `/quit` to leave.
 
 ```bash
 quizmd room --create --mode boxing --role teacher --quiz hello-quiz.md

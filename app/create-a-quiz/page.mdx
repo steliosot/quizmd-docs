@@ -14,6 +14,8 @@ quizmd init
 
 `quizmd init` creates starter templates for Classic, Imposter, and Essay modes. Room modes reuse a normal quiz template and run it online.
 
+Classic and Imposter templates run locally with no API key. Essay templates need an AI provider key. Room templates need internet access because they connect to an online room server.
+
 ## First template
 
 Use this as the smallest Classic Mode quiz:
@@ -148,6 +150,13 @@ Feedback:
 ```bash
 export GEMINI_API_KEY="your_key_here"
 quizmd --validate requirements-essay.md
+quizmd requirements-essay.md
+```
+
+Windows PowerShell:
+
+```powershell
+$env:GEMINI_API_KEY="your_key_here"
 quizmd requirements-essay.md
 ```
 

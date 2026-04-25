@@ -6,6 +6,20 @@ title: CLI Reference
 
 Short, copyable commands for daily QuizMD use.
 
+## Install and Update
+
+| Command | What it does |
+| --- | --- |
+| `pip install quizmd` | Install QuizMD from PyPI. |
+| `pip install -U quizmd` | Update QuizMD to the newest published version. |
+| `quizmd --version` | Confirm the installed version. |
+
+```bash
+pip install quizmd
+pip install -U quizmd
+quizmd --version
+```
+
 ## Help
 
 | Command | What it does |
@@ -82,7 +96,7 @@ quizmd --ai-provider auto hello-essay.md
 quizmd --ai-provider gemini hello-essay.md
 quizmd --ai-provider openai hello-essay.md
 quizmd --ai-provider anthropic hello-essay.md
-quizmd --ai-model gemini-1.5-flash hello-essay.md
+quizmd --ai-model gemini-flash-latest hello-essay.md
 quizmd --ai-timeout 30 hello-essay.md
 ```
 
@@ -109,6 +123,7 @@ quizmd room --create --name Alex --quiz hello-quiz.md
 ```
 
 Room quizzes need `Time` or `time_limit` of at least 5 seconds per question.
+Room modes require internet access to reach the room server. They do not need an AI API key.
 
 ## Room Join
 
@@ -158,7 +173,7 @@ quizmd room --join my-room --token abc123 --theme dark --full-screen
 | `/score <0-100>` | Teacher sets the boxing score. |
 | `/end` | End a boxing session. |
 | `/quit` | Leave the room. |
-| `Ctrl+C` | Exit at any time. |
+| `Ctrl+C` | Exit local quiz mode. In rooms, prefer `/quit` or `/end` for a clean exit. |
 
 ## Environment Variables
 
@@ -178,3 +193,18 @@ export GEMINI_API_KEY="your_key_here"
 export QUIZMD_THEME="dark"
 export QUIZMD_ROOM_SERVER="https://example.com"
 ```
+
+Windows PowerShell:
+
+```powershell
+$env:GEMINI_API_KEY="your_key_here"
+$env:QUIZMD_THEME="dark"
+$env:QUIZMD_ROOM_SERVER="https://example.com"
+```
+
+## AI Keys and Privacy
+
+- Never commit API keys or `.env` files with real secrets.
+- Rotate keys that were accidentally shared or committed.
+- Essay text is sent to the selected provider when AI grading is enabled.
+- Provider quotas matter: if Gemini, OpenAI, or Anthropic quota is exhausted, users may see provider errors or fallback feedback.

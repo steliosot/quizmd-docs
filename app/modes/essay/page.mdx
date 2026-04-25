@@ -26,13 +26,27 @@ Explain why a Python team might pin package versions in `requirements.txt`.
 ## Instructions for Students
 Write a short technical answer for a junior developer joining the project.
 
-## Evaluation Criteria
-- Explains reproducible installs
-- Mentions CI/team consistency
-- Notes the tradeoff with updates and security patches
+## Evaluation Criteria (Total: 3 points)
+1. **Reproducible installs (1 point)**
+- Explains that pinned versions make installs predictable
+2. **CI/team consistency (1 point)**
+- Mentions consistent environments across machines or CI
+3. **Maintenance tradeoff (1 point)**
+- Notes that pins still need updates for bug fixes and security patches
 
 ## Reference Answer
 Pinned dependencies make installs predictable across machines and CI, but they need regular review so security fixes are not missed.
+
+## AI Evaluation Rules
+Evaluate only against the criteria above. Give partial credit for accurate but incomplete answers.
+
+## Output Format
+Score: XX%
+
+Feedback:
+- What worked
+- What is missing
+- One suggestion
 ```
 
 ## Key differences from MCQ
@@ -46,6 +60,13 @@ Pinned dependencies make installs predictable across machines and CI, but they n
 ```bash
 export GEMINI_API_KEY="your_key_here"
 quizmd --validate hello-essay.md
+quizmd hello-essay.md
+```
+
+Windows PowerShell:
+
+```powershell
+$env:GEMINI_API_KEY="your_key_here"
 quizmd hello-essay.md
 ```
 

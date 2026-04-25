@@ -9,7 +9,7 @@
   <text x="90" y="136" fill="#e5e7eb" font-size="26" font-weight="700" font-family="SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace">$ quizmd room --create --mode boxing --role teacher --quiz hello-quiz.md</text>
   <text x="90" y="183" fill="#e5e7eb" font-size="26" font-weight="700" font-family="SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace">Room name: calm-panda</text>
   <text x="90" y="230" fill="#e5e7eb" font-size="26" font-weight="700" font-family="SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace">Role: teacher</text>
-  <text x="90" y="277" fill="#93c5fd" font-size="26" font-weight="700" font-family="SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace">Student joins: quizmd room --join calm-panda --role student</text>
+  <text x="90" y="277" fill="#93c5fd" font-size="26" font-weight="700" font-family="SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace">Student joins: quizmd room --join calm-panda --token qmd-1904 --role student</text>
   <text x="90" y="324" fill="#e5e7eb" font-size="26" font-weight="700" font-family="SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace"></text>
   <text x="90" y="371" fill="#34d399" font-size="26" font-weight="800" font-family="SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace">Teacher: What does name.upper() print?</text>
   <text x="90" y="418" fill="#e5e7eb" font-size="26" font-weight="700" font-family="SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace">Student: STELIOS, because upper() capitalizes text.</text>

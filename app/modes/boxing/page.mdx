@@ -8,6 +8,8 @@ Boxing is the teacher/student room mode. It works like a live oral check: the te
 
 ![Room Boxing terminal example using hello-quiz.md](/mode-boxing-terminal.svg)
 
+Room modes require internet access to reach the room server. They do not need an AI API key.
+
 ## Start a room
 
 ```bash
@@ -26,7 +28,7 @@ quizmd room --join <room-name> --token <room-token> --role student
 - Use chat for conversation; teacher can set score with `/score <0-100>`.
 - Either teacher or student can end session with `/end`.
 - Transcript and final score are saved automatically at session end.
-- Press `Ctrl+C` to exit at any time.
+- Use `/end` to finish the session or `/quit` to leave the room cleanly. `Ctrl+C` exits local quiz mode.
 
 ## Best for
 

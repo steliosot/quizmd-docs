@@ -8,6 +8,8 @@ Compete is the online race mode. Everyone answers the same quiz, and the fastest
 
 ![Room Compete terminal example using hello-quiz.md](/mode-compete-terminal.svg)
 
+Room modes require internet access to reach the room server. They do not need an AI API key.
+
 ## Start a room
 
 ```bash
@@ -26,7 +28,7 @@ quizmd room --join <room-name> --token <room-token>
 - Host starts with `/start`; players answer with normal quiz controls.
 - Correct fast answers gain more points; wrong answers lose points.
 - Highest final score wins.
-- Press `Ctrl+C` to exit at any time.
+- Use `/quit` to leave the room cleanly. `Ctrl+C` exits local quiz mode.
 
 ## Best for
 

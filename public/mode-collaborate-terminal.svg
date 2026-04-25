@@ -8,8 +8,8 @@
   <text x="205" y="84" fill="#cbd5e1" font-size="23" font-weight="700" font-family="SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace">quizmd room collaborate</text>
   <text x="90" y="136" fill="#e5e7eb" font-size="26" font-weight="700" font-family="SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace">$ quizmd room --create --mode collaborate --quiz hello-quiz.md</text>
   <text x="90" y="183" fill="#e5e7eb" font-size="26" font-weight="700" font-family="SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace">Room name: steady-lion</text>
-  <text x="90" y="230" fill="#e5e7eb" font-size="26" font-weight="700" font-family="SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace">Quiz: Hello Quiz (3 questions)</text>
-  <text x="90" y="277" fill="#93c5fd" font-size="26" font-weight="700" font-family="SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace">Share &quot;steady-lion&quot; with your team.</text>
+  <text x="90" y="230" fill="#e5e7eb" font-size="26" font-weight="700" font-family="SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace">Room token: qmd-5572</text>
+  <text x="90" y="277" fill="#93c5fd" font-size="26" font-weight="700" font-family="SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace">Join: quizmd room --join steady-lion --token qmd-5572</text>
   <text x="90" y="324" fill="#e5e7eb" font-size="26" font-weight="700" font-family="SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace"></text>
   <text x="90" y="371" fill="#34d399" font-size="26" font-weight="800" font-family="SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace">Question 2/3  Which are Python data types?</text>
   <text x="90" y="418" fill="#93c5fd" font-size="26" font-weight="700" font-family="SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace">Everyone submits before the team result is checked.</text>
