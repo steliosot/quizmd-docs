@@ -1,0 +1,47 @@
+---
+title: Alien Attack Game
+---
+
+# Alien Attack Game
+
+`quizmd alien-attack` is a built-in terminal arcade game with selectable ship mode and difficulty.
+
+## Start
+
+```bash
+quizmd alien-attack
+```
+
+## Options
+
+```bash
+quizmd alien-attack --mode single --difficulty normal
+quizmd alien-attack --mode double --difficulty hard
+quizmd alien-attack --mode triple --difficulty inferno
+quizmd alien-attack --no-color
+```
+
+## Modes
+
+- `single`: smallest ship
+- `double`: medium ship
+- `triple`: widest ship
+
+## Difficulties
+
+- `normal`: balanced alien speed and bomb pressure
+- `hard`: faster waves and denser bombs
+- `inferno`: highest pressure mode
+
+## Controls
+
+- `←/→`: move
+- `Space`: shoot
+- `P`: pause
+- `Q`: quit
+- `R`: restart after game over or win
+
+## Scoring
+
+- Points are awarded per alien hit.
+- Faster hits and later levels increase score potential.

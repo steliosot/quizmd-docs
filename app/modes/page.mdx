@@ -4,7 +4,7 @@ title: Modes
 
 # Modes
 
-QuizMD has six learning modes: three file-based quiz modes and three live room modes. Use the same Markdown-first workflow, then choose the mode that fits the session: solo practice, misconception spotting, rubric feedback, racing, teamwork, or live oral assessment.
+QuizMD has seven learning modes: four file-based quiz modes and three live room modes. Use the same Markdown-first workflow, then choose the mode that fits the session: solo practice, misconception spotting, code repair, rubric feedback, racing, teamwork, or live oral assessment.
 
 ## Which mode should I use?
 
@@ -12,6 +12,7 @@ QuizMD has six learning modes: three file-based quiz modes and three live room m
 | --- | --- | --- |
 | Classic | Normal single-choice or multiple-choice quizzes. | No |
 | Imposter | Misconceptions and plausible-but-wrong answers. | No |
+| Debug | Broken-code repair with hints and line-based scoring. | No |
 | Essay | Written answers with rubric-based feedback. | Yes |
 | Compete | Live race mode with speed scoring. | No |
 | Collaborate | Group consensus and discussion. | No |
@@ -40,6 +41,13 @@ Local Classic and Imposter quizzes can run offline. Room modes use an online roo
       <span className="doc-card-description">Markdown essay prompts with rubric-based AI feedback from Gemini, OpenAI, or Anthropic.</span>
     </span>
     <span className="doc-card-description">Best for assignments.</span>
+  </a>
+  <a className="doc-card" href="./debug/">
+    <span>
+      <span className="doc-card-title">Debug Mode</span>
+      <span className="doc-card-description">Students fix broken code inline with hints, line numbers, and per-line scoring.</span>
+    </span>
+    <span className="doc-card-description">Best for coding classes.</span>
   </a>
   <a className="doc-card" href="./compete/">
     <span>
@@ -149,6 +157,38 @@ quizmd --ai-provider gemini hello-essay.md
 ```
 
 If you only want a short preview in slides or teaching material, label it as a shortened example and link to [Essay Examples](/examples/essay) for a full runnable file.
+
+## Debug Mode
+
+Debug Mode is a code-repair flow. Students open each broken snippet, fix it inline, request hints when needed, and submit the corrected version.
+
+````md
+# Debug Quiz: Python Foundations
+
+## Question 1
+There are two errors. Fix the function so it runs correctly.
+
+Broken:
+```python
+def greet(name)
+    print("Hello, " + name
+```
+
+Fixed:
+```python
+def greet(name):
+    print("Hello, " + name)
+```
+
+Type: debug
+Hint: Start at line 1, then check missing punctuation on line 2.
+Explanation: Function definitions need a trailing colon, and print call needs a closing parenthesis.
+````
+
+```bash
+quizmd --validate hello-debug.md
+quizmd hello-debug.md
+```
 
 ## Room: Compete
 

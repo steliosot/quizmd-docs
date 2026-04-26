@@ -67,3 +67,7 @@ quizmd --ai-timeout 45 hello-essay.md
 - Rotate any key that was pasted into chat, committed to Git, or shown on a shared screen.
 - Essay answer content is sent to the selected provider for evaluation when AI grading is enabled.
 - If Gemini, OpenAI, or Anthropic quota is exhausted, users may see provider errors or fallback feedback depending on the selected provider behavior.
+
+## Wrong key behavior
+
+If a key is invalid or unauthorized, QuizMD now prints a clear provider-specific message (for example: Gemini rejected the key, update `GEMINI_API_KEY`) and then falls back to deterministic feedback mode.

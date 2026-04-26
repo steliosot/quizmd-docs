@@ -45,7 +45,9 @@ This creates starter quiz files in your current folder:
 Created:
 - hello-quiz.md
 - hello-imposter.md
+- hello-debug.md
 - hello-essay.md
+- QUIZ_GUIDE.md
 ```
 
 ## 3. Validate the quiz
@@ -59,6 +61,7 @@ Validate each starter before you run it. This catches missing fields, broken ans
 ```bash
 quizmd --validate hello-quiz.md
 quizmd --validate hello-imposter.md
+quizmd --validate hello-debug.md
 quizmd --validate hello-essay.md
 ```
 
@@ -67,16 +70,18 @@ Expected:
 ```text
 Validation passed: Hello Quiz (3 questions)
 Validation passed: Hello Imposter Quiz (3 questions)
+Validation passed: Debug Quiz: Python Foundations (3 debug questions)
 Validation passed: Essay Question: requirements basics (3 points)
 ```
 
 ## 4. Run the quiz
 
-Run the classic and imposter starters directly. QuizMD runs files with `quizmd file.md`.
+Run the classic, imposter, and debug starters directly. QuizMD runs files with `quizmd file.md`.
 
 ```bash
 quizmd hello-quiz.md
 quizmd hello-imposter.md
+quizmd hello-debug.md
 ```
 
 You should see an interactive terminal quiz:

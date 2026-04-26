@@ -27,12 +27,14 @@ quizmd --version
 | `quizmd --help` | Show the main CLI help. |
 | `quizmd init --help` | Show starter-file options. |
 | `quizmd room --help` | Show online room options. |
+| `quizmd alien-attack --help` | Show Alien Attack options. |
 | `quizmd --version` | Print the installed QuizMD version. |
 
 ```bash
 quizmd --help
 quizmd init --help
 quizmd room --help
+quizmd alien-attack --help
 quizmd --version
 ```
 
@@ -43,23 +45,47 @@ quizmd --version
 | `quizmd file.md` | Run a Markdown quiz in the terminal. |
 | `quizmd --validate file.md` | Check the file structure without starting the quiz. |
 | `quizmd --full-screen file.md` | Show one question in a full-screen style view. |
+| `quizmd --hide-feedback file.md` | Hide answer/explanation after each question. |
+| `quizmd --hide file.md` | Short alias for `--hide-feedback`. |
 
 ```bash
 quizmd hello-quiz.md
 quizmd --validate hello-quiz.md
 quizmd --full-screen hello-quiz.md
+quizmd --hide-feedback hello-quiz.md
+quizmd --hide hello-quiz.md
 ```
+
+## Alien Attack
+
+| Command | What it does |
+| --- | --- |
+| `quizmd alien-attack` | Start the game with interactive mode/difficulty setup. |
+| `quizmd alien-attack --mode single` | Start with the single ship profile. |
+| `quizmd alien-attack --difficulty inferno` | Start with inferno difficulty. |
+| `quizmd alien-attack --no-color` | Disable color output in game UI. |
+
+```bash
+quizmd alien-attack
+quizmd alien-attack --mode single --difficulty normal
+quizmd alien-attack --mode triple --difficulty hard
+quizmd alien-attack --mode double --difficulty inferno --no-color
+```
+
+Game controls: `←/→` move, `Space` shoot, `P` pause, `Q` quit, `R` restart.
 
 ## Create Starter Files
 
 | Command | What it does |
 | --- | --- |
 | `quizmd init` | Create working starter templates in the current folder. |
+| `quizmd init --ui next` | Use the enhanced starter screen UI. |
 | `quizmd init --dir quizzes` | Create starter templates in another folder. |
 | `quizmd init --force` | Overwrite starter files if they already exist. |
 
 ```bash
 quizmd init
+quizmd init --ui next
 quizmd init --dir quizzes
 quizmd init --force
 ```

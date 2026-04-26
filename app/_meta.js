@@ -2,6 +2,7 @@ export default {
   index: 'Overview',
   quickstart: 'Quickstart',
   modes: 'Modes',
+  'alien-attack': 'Alien Attack Game',
   'create-a-quiz': 'Create a Quiz',
   examples: 'Examples',
   'validation-errors': 'Validation & Errors',

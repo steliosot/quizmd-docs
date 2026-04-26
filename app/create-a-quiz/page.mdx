@@ -12,9 +12,9 @@ QuizMD quizzes are plain Markdown templates. Start from one working file, change
 quizmd init
 ```
 
-`quizmd init` creates starter templates for Classic, Imposter, and Essay modes. Room modes reuse a normal quiz template and run it online.
+`quizmd init` creates starter templates for Classic, Imposter, Debug, and Essay modes. Room modes reuse a normal quiz template and run it online.
 
-Classic and Imposter templates run locally with no API key. Essay templates need an AI provider key. Room templates need internet access because they connect to an online room server.
+Classic, Imposter, and Debug templates run locally with no API key. Essay templates need an AI provider key. Room templates need internet access because they connect to an online room server.
 
 ## First template
 
@@ -53,7 +53,7 @@ quizmd intro-quiz.md
 
 ## Choose a template by mode
 
-<Tabs items={["Classic", "Imposter", "Essay", "Room: Compete", "Room: Collaborate", "Room: Boxing"]}>
+<Tabs items={["Classic", "Imposter", "Debug", "Essay", "Room: Compete", "Room: Collaborate", "Room: Boxing"]}>
   <Tabs.Tab>
 
 Use Classic Mode for normal single-choice or multiple-choice practice. It is the best first template because it works locally and needs no AI key.
@@ -108,6 +108,39 @@ Explanation: append adds one element. extend adds the contents separately.
 ```bash
 quizmd --validate imposter-quiz.md
 quizmd imposter-quiz.md
+```
+
+  </Tabs.Tab>
+  <Tabs.Tab>
+
+Use Debug Mode when you want students to repair broken code and learn by fixing syntax, indentation, and logic mistakes.
+
+````md
+# Debug Quiz: Python Foundations
+
+## Question 1
+There are two errors. Fix the function so it runs correctly.
+
+Broken:
+```python
+def greet(name)
+    print("Hello, " + name
+```
+
+Fixed:
+```python
+def greet(name):
+    print("Hello, " + name)
+```
+
+Type: debug
+Hint: Start at line 1, then check missing punctuation on line 2.
+Explanation: Function definitions need a trailing colon, and print call needs a closing parenthesis.
+````
+
+```bash
+quizmd --validate debug-quiz.md
+quizmd debug-quiz.md
 ```
 
   </Tabs.Tab>

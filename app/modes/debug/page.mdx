@@ -1,0 +1,57 @@
+---
+title: Debug Mode
+---
+
+# Debug Mode
+
+Debug Mode turns each question into a code-repair task. Learners fix broken code inline, request hints, and get line-based scoring.
+
+## When to use it
+
+- Python foundations and syntax practice
+- Debugging labs and workshops
+- Interviews or coding warmups where correction matters more than memorization
+
+## Minimal template
+
+````md
+# Debug Quiz: Python Foundations
+
+## Question 1
+There are two errors. Fix the function so it runs correctly.
+
+Broken:
+```python
+def greet(name)
+    print("Hello, " + name
+```
+
+Fixed:
+```python
+def greet(name):
+    print("Hello, " + name)
+```
+
+Type: debug
+Hint: Start at line 1, then check missing punctuation on line 2.
+Explanation: Function definitions need a trailing colon, and print call needs a closing parenthesis.
+````
+
+Run it:
+
+```bash
+quizmd --validate hello-debug.md
+quizmd hello-debug.md
+```
+
+## Interactive flow
+
+- Press `D` to enter edit mode.
+- Press `Esc` to lock the editor and open actions.
+- Choose `Proceed` or `Show hint` with `↑/↓` (or `←/→`), then press `Enter` or `Space`.
+- Score is based on corrected error lines for each question.
+
+## Notes
+
+- Debug mode is local and does not need an API key.
+- You can still use global CLI flags like `--theme`, `--no-color`, `--full-screen`, and `--hide-feedback`.
