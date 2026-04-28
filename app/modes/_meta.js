@@ -1,5 +1,4 @@
 export default {
-  index: 'Modes Overview',
   classic: 'Classic Mode',
   imposter: 'Imposter Mode',
   debug: 'Debug Mode',
