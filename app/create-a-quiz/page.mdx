@@ -12,7 +12,7 @@ QuizMD quizzes are plain Markdown templates. Start from one working file, change
 quizmd init
 ```
 
-`quizmd init` creates starter templates for Classic, Imposter, Debug, and Essay modes. Room modes reuse a normal quiz template and run it online.
+`quizmd init` creates starter templates for Classic, Imposter, Debug, Challenge, Reverse, and Essay modes. Room modes reuse a normal quiz template and run it online.
 
 Classic, Imposter, and Debug templates run locally with no API key. Essay templates need an AI provider key. Room templates need internet access because they connect to an online room server.
 
@@ -53,7 +53,7 @@ quizmd intro-quiz.md
 
 ## Choose a template by mode
 
-<Tabs items={["Classic", "Imposter", "Debug", "Essay", "Room: Compete", "Room: Collaborate", "Room: Boxing"]}>
+<Tabs items={["Classic", "Imposter", "Debug", "Challenge", "Reverse", "Essay", "Room: Compete", "Room: Collaborate", "Room: Boxing"]}>
   <Tabs.Tab>
 
 Use Classic Mode for normal single-choice or multiple-choice practice. It is the best first template because it works locally and needs no AI key.
@@ -141,6 +141,84 @@ Explanation: Function definitions need a trailing colon, and print call needs a 
 ```bash
 quizmd --validate debug-quiz.md
 quizmd debug-quiz.md
+```
+
+  </Tabs.Tab>
+  <Tabs.Tab>
+
+Use Challenge Mode for category-based practice with risk stars. Learners choose `Easy`/`Normal`/`Hard` per category and earn 1/2/3 stars when correct.
+
+```md
+# Challenge Quiz: General Knowledge Stars
+
+## Category: Geography
+Which river flows through Paris?
+
+### Easy
+- Thames
+- Seine
+- Danube
+Answer: 2
+Type: single
+Explanation: Paris is built along the Seine River.
+
+### Normal
+- Seine
+- Loire
+- Rhine
+Answer: 1
+Type: single
+Explanation: The Seine is the river that runs through Paris.
+
+### Hard
+- Seine
+- Oise
+- Garonne
+- Rhone
+Answer: 1
+Type: single
+Explanation: The Seine is correct.
+```
+
+```bash
+quizmd --validate hello-challenge.md
+quizmd hello-challenge.md
+```
+
+  </Tabs.Tab>
+  <Tabs.Tab>
+
+Use Reverse Mode for output-to-code, behavior-to-code, and bug-fix selection questions. It uses standard MCQ scoring and controls.
+
+````md
+# Reverse Quiz: Python Reverse Engineering
+
+## Question 1
+Output:
+HELLO
+HELLO
+HELLO
+
+Which code produced this?
+
+```python
+for i in range(3):
+    print("HELLO")
+```
+
+Options:
+- A only
+- B only
+- C only
+
+Answer: 1
+Type: single
+Explanation: This is the only option that prints three lines.
+````
+
+```bash
+quizmd --validate hello-reverse.md
+quizmd hello-reverse.md
 ```
 
   </Tabs.Tab>

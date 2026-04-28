@@ -1,0 +1,54 @@
+---
+title: Challenge Mode
+---
+
+# Challenge Mode
+
+Challenge Mode is a category board where learners pick a category, choose risk (`Easy`/`Normal`/`Hard`), answer once, and earn stars.
+
+Scoring:
+
+- Correct `Easy` = `1` star
+- Correct `Normal` = `2` stars
+- Correct `Hard` = `3` stars
+- Wrong answer = `0` stars (`𓃵`)
+
+Each category is single-attempt and then locked. Final summary shows total stars, completion, and highest solved difficulty.
+
+## Markdown format
+
+Challenge files start with:
+
+```md
+# Challenge Quiz: General Knowledge Stars
+```
+
+Each category must include all three difficulty sections:
+
+- `### Easy`
+- `### Normal`
+- `### Hard`
+
+Each difficulty uses standard options + `Answer` + `Type: single`.
+
+## Example
+
+```md
+## Category: Geography
+Which river flows through Paris?
+
+### Easy
+- Thames
+- Seine
+- Danube
+Answer: 2
+Type: single
+Explanation: Paris is built along the Seine River.
+```
+
+Run it:
+
+```bash
+quizmd --validate hello-challenge.md
+quizmd hello-challenge.md
+```

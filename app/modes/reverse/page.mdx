@@ -1,0 +1,60 @@
+---
+title: Reverse Mode
+---
+
+# Reverse Mode
+
+Reverse Mode is MCQ with a reverse-engineering focus: output to code, behavior to code, and bug-fix recognition.
+
+It uses the same interaction and scoring model as Classic Mode (`single` and `multiple`).
+
+## When to use it
+
+- Early programming classes
+- Code-reading practice
+- Debug reasoning drills without writing full solutions
+
+## Markdown format
+
+Reverse files start with:
+
+```md
+# Reverse Quiz: Python Reverse Engineering
+```
+
+Then use normal MCQ blocks (`## Question`, options, `Answer`, `Type`, optional `Time`, optional `Explanation`).
+
+## Example
+
+````md
+# Reverse Quiz: Python Reverse Engineering
+
+## Question 1
+Output:
+HELLO
+HELLO
+HELLO
+
+Which code produced this?
+
+```python
+for i in range(3):
+    print("HELLO")
+```
+
+Options:
+- A only
+- B only
+- C only
+
+Answer: 1
+Type: single
+Explanation: This is the only option that prints three lines.
+````
+
+Run it:
+
+```bash
+quizmd --validate hello-reverse.md
+quizmd hello-reverse.md
+```
