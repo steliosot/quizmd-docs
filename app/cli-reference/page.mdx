@@ -52,9 +52,11 @@ quizmd --version
 quizmd hello-quiz.md
 quizmd hello-challenge.md
 quizmd hello-reverse.md
+quizmd hello-millionaire.md
 quizmd --validate hello-quiz.md
 quizmd --validate hello-challenge.md
 quizmd --validate hello-reverse.md
+quizmd --validate hello-millionaire.md
 quizmd --full-screen hello-quiz.md
 quizmd --hide-feedback hello-quiz.md
 quizmd --hide hello-quiz.md
@@ -160,12 +162,14 @@ Room modes require internet access to reach the room server. They do not need an
 | Command | What it does |
 | --- | --- |
 | `quizmd room --join ROOM_NAME --token ROOM_TOKEN` | Join a secure room using the token printed by the host. |
+| `quizmd room --join ROOM_NAME` | Join an open room (no token required). |
 | `quizmd room --join ROOM_NAME --token ROOM_TOKEN --name Alex` | Join with a display name. |
 | `quizmd room --join ROOM_NAME --token ROOM_TOKEN --role teacher` | Join a boxing room as teacher. |
 | `quizmd room --join ROOM_NAME --token ROOM_TOKEN --role student` | Join a boxing room as student. |
 
 ```bash
 quizmd room --join my-room --token abc123
+quizmd room --join my-room
 quizmd room --join my-room --token abc123 --name Alex
 quizmd room --join my-room --token abc123 --role teacher
 quizmd room --join my-room --token abc123 --role student

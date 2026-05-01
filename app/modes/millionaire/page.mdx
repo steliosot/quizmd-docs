@@ -1,0 +1,68 @@
+---
+title: Millionaire Mode
+---
+
+# Millionaire Mode
+
+Millionaire Mode is a 15-question ladder with lifelines, safety nets, and increasing point values up to 1,000,000.
+
+## What it does
+
+- Uses exactly 15 `Type: single` questions.
+- Applies an increasing points ladder per question.
+- Adds safety nets (guaranteed floor) at key questions.
+- Supports lifelines:
+  - `F` = 50-50
+  - `A` = Ask the People
+  - `C` = Ask Friend (uses `Friend Name:`)
+  - `D` = Ask AI (optional; shown only when AI key exists)
+
+## UI behavior
+
+- Lifelines and points appear below options with a labeled divider:
+  - `────────── Lifelines ──────────`
+- `Ask AI` shows a loading animation while fetching, then prints:
+  - `Gemini says: ...` (or provider name in use).
+- On the final question in full-screen mode, results transition automatically (no extra “Press Enter...” prompt).
+
+## Required format
+
+```md
+# Millionaire Quiz: Fun Trivia Ladder
+Friend Name: Stelios
+
+## Question 1
+What is the capital of France?
+
+- Berlin
+- Madrid
+- Paris
+- Rome
+
+Answer: 3
+Type: single
+Explanation: Paris is the capital city of France.
+```
+
+Rules:
+
+- Must start with `# Millionaire Quiz: <title>`.
+- Must contain exactly 15 questions.
+- Only `Type: single` is allowed.
+- `Imposters:` is not supported in this mode.
+- `Time:` is optional; defaults are applied if omitted.
+
+## Run
+
+```bash
+quizmd --validate hello-millionaire.md
+quizmd hello-millionaire.md
+```
+
+Optional AI lifeline setup:
+
+```bash
+export GEMINI_API_KEY="your_key_here"
+quizmd hello-millionaire.md
+```
+

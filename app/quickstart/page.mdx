@@ -48,6 +48,7 @@ Created:
 - hello-debug.md
 - hello-challenge.md
 - hello-reverse.md
+- hello-millionaire.md
 - hello-essay.md
 - QUIZ_GUIDE.md
 ```
@@ -66,6 +67,7 @@ quizmd --validate hello-imposter.md
 quizmd --validate hello-debug.md
 quizmd --validate hello-challenge.md
 quizmd --validate hello-reverse.md
+quizmd --validate hello-millionaire.md
 quizmd --validate hello-essay.md
 ```
 
@@ -77,6 +79,7 @@ Validation passed: Hello Imposter Quiz (3 questions)
 Validation passed: Debug Quiz: Python Foundations (3 debug questions)
 Validation passed: Challenge Quiz: General Knowledge Stars (6 categories)
 Validation passed: Reverse Quiz: Python Reverse Engineering (5 questions)
+Validation passed: Millionaire Quiz: Fun Trivia Ladder (15 questions, max 120s each)
 Validation passed: Essay Question: requirements basics (3 points)
 ```
 
@@ -90,6 +93,7 @@ quizmd hello-imposter.md
 quizmd hello-debug.md
 quizmd hello-challenge.md
 quizmd hello-reverse.md
+quizmd hello-millionaire.md
 ```
 
 You should see an interactive terminal quiz:
@@ -131,6 +135,8 @@ quizmd hello-essay.md
 ```
 
 Supported providers: Gemini, OpenAI, and Anthropic. If you do not have an API key yet, skip essay mode and start with `hello-quiz.md`.
+
+Millionaire mode works without API keys. If a key is present, the optional `Ask AI` lifeline appears automatically.
 
 <Callout type="warning">
   **Common mistakes**
